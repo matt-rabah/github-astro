@@ -1,56 +1,329 @@
-/* This file is generated and will include all the font faces of the font families from tailwind.config */
-/* heading - avenir-lt-w01_85-heavy1475544 */
+/*
+  Local font declarations for Astro
+  Place the .woff2 files in:
+  - /public/fonts/Tiempos/
+  - /public/fonts/Graphik/
+
+  CSS URL paths from Astro/Vite:
+  - /fonts/Tiempos/<filename>.woff2
+  - /fonts/Graphik/<filename>.woff2
+
+  Source notes:
+  - Replaces remote/parastorage Google font URLs from the original fonts.css.
+  - Uses locally uploaded Tiempos and Graphik webfont filenames.
+  - Keeps @font-face declarations focused on loading only. OpenType features are applied through usage classes below, not inside @font-face.
+*/
+
+/* -------------------------------------------------------------------------- */
+/* Graphik                                                                    */
+/* Features available: calt, case, cpsp, dnom, frac, kern, liga, locl, numr,  */
+/* onum, ordn, salt, sinf, ss01, ss02, ss03, ss05, sups, tnum                 */
+/* -------------------------------------------------------------------------- */
+
 @font-face {
-  font-family: "avenir-lt-w01_85-heavy1475544";
-  font-style: normal;
+  font-family: "Graphik";
+  src: url("/fonts/Graphik/graphik-regular.woff2") format("woff2");
   font-weight: 400;
-  src: url("//static.parastorage.com/fonts/v2/74290729-59ae-4129-87d0-2eec3974dce1/v1/avenir-lt-w05_85-heavy.woff2")
-    format("woff2");
-  unicode-range:
-    U+0100-012B, U+012E-0130, U+0132-0137, U+0139-0149, U+014C-0151,
-    U+0154-015F, U+0162-0177, U+0179-017C, U+0218-021B, U+02C9, U+02D8-02D9,
-    U+02DB, U+02DD, U+0394, U+03A9, U+03BC, U+03C0, U+1E9E, U+20B9-20BA,
-    U+20BC-20BD, U+2113, U+2126, U+212E, U+2202, U+2206, U+220F, U+2211-2212,
-    U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA,
-    U+F8FF, U+FB01-FB02;
+  font-style: normal;
+  font-display: swap;
 }
+
 @font-face {
-  font-family: "avenir-lt-w01_85-heavy1475544";
+  font-family: "Graphik";
+  src: url("/fonts/Graphik/graphik-medium.woff2") format("woff2");
+  font-weight: 500;
   font-style: normal;
-  font-weight: 400;
-  src: url("//static.parastorage.com/fonts/v2/74290729-59ae-4129-87d0-2eec3974dce1/v1/avenir-lt-w01_85-heavy1475544.woff2")
-    format("woff2");
-  unicode-range:
-    U+0000, U+000D, U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+0160-0161,
-    U+0178, U+017D-017E, U+0192, U+0237, U+02C6-02C7, U+02DA, U+02DC,
-    U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030,
-    U+2039-203A, U+2044, U+20AC, U+2122;
+  font-display: swap;
 }
-/* paragraph - baskervillemtw01-smbdit */
+
 @font-face {
-  font-family: "baskervillemtw01-smbdit";
+  font-family: "Graphik";
+  src: url("/fonts/Graphik/graphik-semibold.woff2") format("woff2");
+  font-weight: 600;
   font-style: normal;
-  font-weight: 400;
-  src: url("//static.parastorage.com/fonts/v2/f26e0fab-f63d-4ecc-80e2-a2136c759445/v1/baskervillemtw05-smbdit.woff2")
-    format("woff2");
-  unicode-range:
-    U+0000, U+000D, U+0100-0130, U+0132-0151, U+0154-015F, U+0162-0177,
-    U+0179-017C, U+01FC-01FF, U+0218-021B, U+02C9, U+02D8-02D9, U+02DB, U+02DD,
-    U+03A9, U+03BC, U+03C0, U+1E80-1E85, U+1EF2-1EF3, U+2012, U+2024-2025,
-    U+2044, U+2070, U+2074-2079, U+207D-2089, U+208D-208E, U+20A1, U+2113,
-    U+2126, U+212E, U+2153-2154, U+215B-215E, U+2202, U+2206, U+220F,
-    U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260,
-    U+2264-2265, U+25CA, U+E000-E002, U+F637, U+F655-F65E, U+F661-F66A, U+F6C3,
-    U+F6DC-F6DD, U+F6DF-F6F3, U+F724, U+F730-F739, U+F7A2, U+FB00-FB04;
+  font-display: swap;
 }
+
 @font-face {
-  font-family: "baskervillemtw01-smbdit";
+  font-family: "Graphik";
+  src: url("/fonts/Graphik/graphik-bold.woff2") format("woff2");
+  font-weight: 700;
   font-style: normal;
+  font-display: swap;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Graphik Compact                                                            */
+/* Features available: calt, case, cpsp, dnom, frac, kern, liga, locl, numr,  */
+/* onum, ordn, salt, sinf, ss01, ss02, ss03, ss05, sups, tnum                 */
+/* -------------------------------------------------------------------------- */
+
+@font-face {
+  font-family: "Graphik Compact";
+  src: url("/fonts/Graphik/graphik-compact-regular.woff2") format("woff2");
   font-weight: 400;
-  src: url("//static.parastorage.com/fonts/v2/f26e0fab-f63d-4ecc-80e2-a2136c759445/v1/baskervillemtw01-smbdit.woff2")
-    format("woff2");
-  unicode-range:
-    U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+0160-0161, U+0178,
-    U+017D-017E, U+0192, U+02C6-02C7, U+02DA, U+02DC, U+2013-2014, U+2018-201A,
-    U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+20AC, U+2122;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Graphik Compact";
+  src: url("/fonts/Graphik/graphik-compact-bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Graphik XXCond                                                             */
+/* Features available: calt, case, cpsp, dnom, frac, kern, liga, locl, numr,  */
+/* onum, ordn, salt, sinf, ss01, ss02, ss03, ss05, ss06, sups                 */
+/* -------------------------------------------------------------------------- */
+
+@font-face {
+  font-family: "Graphik XXCond";
+  src: url("/fonts/Graphik/GraphikXXCond-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Graphik XXCond";
+  src: url("/fonts/Graphik/GraphikXXCond-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Graphik XXCond";
+  src: url("/fonts/Graphik/GraphikXXCond-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Tiempos Fine                                                               */
+/* Features available: frac, kern, liga, locl                                 */
+/* -------------------------------------------------------------------------- */
+
+@font-face {
+  font-family: "Tiempos Fine";
+  src: url("/fonts/Tiempos/tiempos-fine-light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Tiempos Fine";
+  src: url("/fonts/Tiempos/tiempos-fine-light-italic.woff2") format("woff2");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Tiempos Headline                                                           */
+/* Features available: case, frac, kern, liga, locl                           */
+/* -------------------------------------------------------------------------- */
+
+@font-face {
+  font-family: "Tiempos Headline";
+  src: url("/fonts/Tiempos/tiempos-headline-light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Tiempos Text                                                               */
+/* Features available: c2sc, case, cpsp, frac, kern, liga, lnum, locl, onum,  */
+/* smcp, tnum                                                                 */
+/* -------------------------------------------------------------------------- */
+
+@font-face {
+  font-family: "Tiempos Text";
+  src: url("/fonts/Tiempos/tiempos-text-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Tiempos Text";
+  src: url("/fonts/Tiempos/tiempos-text-regular-italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Tiempos Text";
+  src: url("/fonts/Tiempos/tiempos-text-medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Tiempos Text";
+  src: url("/fonts/Tiempos/tiempos-text-medium-italic.woff2") format("woff2");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Tiempos Text";
+  src: url("/fonts/Tiempos/tiempos-text-semibold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Project font tokens                                                        */
+/* -------------------------------------------------------------------------- */
+
+:root {
+  --font-sans:
+    "Graphik", Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Arial, sans-serif;
+  --font-sans-compact:
+    "Graphik Compact", "Graphik", Inter, system-ui, sans-serif;
+  --font-sans-condensed:
+    "Graphik XXCond", "Graphik Compact", "Graphik", Inter, system-ui, sans-serif;
+  --font-serif: "Tiempos Text", Georgia, "Times New Roman", serif;
+  --font-serif-headline:
+    "Tiempos Headline", "Tiempos Fine", "Tiempos Text", Georgia, serif;
+  --font-serif-fine:
+    "Tiempos Fine", "Tiempos Headline", "Tiempos Text", Georgia, serif;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Recommended defaults                                                       */
+/* -------------------------------------------------------------------------- */
+
+html {
+  font-family: var(--font-sans);
+  font-feature-settings:
+    "kern" 1,
+    "liga" 1,
+    "calt" 1;
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
+/* Prevent fake browser synthesis when a true local face is missing. */
+body,
+button,
+input,
+textarea,
+select {
+  font-synthesis-weight: none;
+  font-synthesis-style: none;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Optional usage classes                                                     */
+/* -------------------------------------------------------------------------- */
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+.font-sans-compact {
+  font-family: var(--font-sans-compact);
+}
+
+.font-sans-condensed {
+  font-family: var(--font-sans-condensed);
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-serif-headline {
+  font-family: var(--font-serif-headline);
+}
+
+.font-serif-fine {
+  font-family: var(--font-serif-fine);
+}
+
+/* OpenType utilities */
+.ot-default {
+  font-feature-settings:
+    "kern" 1,
+    "liga" 1,
+    "calt" 1;
+}
+
+.ot-caps {
+  font-feature-settings:
+    "kern" 1,
+    "liga" 1,
+    "case" 1,
+    "cpsp" 1;
+}
+
+.ot-small-caps {
+  font-feature-settings:
+    "kern" 1,
+    "liga" 1,
+    "smcp" 1;
+}
+
+.ot-caps-to-small-caps {
+  font-feature-settings:
+    "kern" 1,
+    "liga" 1,
+    "c2sc" 1,
+    "smcp" 1;
+}
+
+.ot-oldstyle-nums {
+  font-feature-settings:
+    "kern" 1,
+    "liga" 1,
+    "onum" 1;
+}
+
+.ot-lining-nums {
+  font-feature-settings:
+    "kern" 1,
+    "liga" 1,
+    "lnum" 1;
+}
+
+.ot-tabular-nums {
+  font-feature-settings:
+    "kern" 1,
+    "liga" 1,
+    "tnum" 1;
+}
+
+.ot-fractions {
+  font-feature-settings:
+    "kern" 1,
+    "liga" 1,
+    "frac" 1;
+}
+
+.ot-graphik-stylistic {
+  font-feature-settings:
+    "kern" 1,
+    "liga" 1,
+    "calt" 1,
+    "ss01" 1,
+    "ss02" 1,
+    "ss03" 1;
 }
