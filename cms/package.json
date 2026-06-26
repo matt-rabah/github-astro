@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@astrojs/check": "0.9.4",
-    "@astrojs/cloudflare": "12.5.5",
+    "@astrojs/cloudflare": "13.1.10",
     "@astrojs/react": "4.3.0",
     "@astrojs/tailwind": "6.0.2",
     "@hello-pangea/dnd": "18.0.1",
@@ -96,7 +96,7 @@
     "@wix/stores": "^1.0.558",
     "@wix/vibe-routes-parser": "^0.0.6",
     "@wix/wix-vibe-plugins": "^0.0.8",
-    "astro": "^5.12.3",
+    "astro": "^7.0.3",
     "babel-plugin-transform-react-jsx-location": "^0.2.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -149,7 +149,7 @@
     "typescript": "^5.8.3",
     "vite": "^6.4.1",
     "vite-tsconfig-paths": "^5.1.4",
-    "vitest": "3.1.4"
+    "vitest": "3.2.6"
   },
   "optionalDependencies": {
     "@rollup/rollup-linux-x64-gnu": "4.45.1"
