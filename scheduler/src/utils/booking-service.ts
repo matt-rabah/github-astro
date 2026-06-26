@@ -91,14 +91,16 @@ export async function getAvailableSlots(
       { timezone: "UTC" },
     );
 
-    return availability.availabilityEntries.map((item) => ({
-      time: item.slot?.startDate!,
-      display: Intl.DateTimeFormat("en-US", TIME_FORMAT).format(
-        new Date(item.slot?.startDate!),
-      ),
-      available: item.bookable!,
-      entity: item,
-    }));
+    return (
+      availability.availabilityEntries?.map((item) => ({
+        time: item.slot?.startDate!,
+        display: Intl.DateTimeFormat("en-US", TIME_FORMAT).format(
+          new Date(item.slot?.startDate!),
+        ),
+        available: item.bookable!,
+        entity: item,
+      })) ?? []
+    );
   } catch (error) {
     console.error("Error fetching available slots:", error);
     return [];
