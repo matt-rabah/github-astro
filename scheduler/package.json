@@ -17,7 +17,7 @@
     "@wix/essentials": "^1.0.6",
     "@wix/redirects": "1.0.60",
     "@wix/sdk": "^1.21.5",
-    "astro": "^5.8.0",
+    "astro": "^7.0.3",
     "tailwindcss": "^4.1.7",
     "tailwindcss-animate": "^1.0.7",
     "typescript": "^5.8.3"
