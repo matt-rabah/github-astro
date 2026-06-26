@@ -1,5 +1,5 @@
 import { z, defineCollection } from 'astro:content';
-import { wixBlogLoader } from '@wix/astro/loaders';
+import { wixBlogLoader } from './loaders';
 
 const metadataDefinition = () =>
   z
