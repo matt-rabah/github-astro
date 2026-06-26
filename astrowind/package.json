@@ -24,6 +24,7 @@
     "deploy:prod": "wix edge deploy --prod"
   },
   "dependencies": {
+    "@astrojs/compiler": "^4.0.0",
     "@astrojs/rss": "^4.0.11",
     "@astrojs/sitemap": "^3.2.1",
     "@astrolib/analytics": "^0.6.1",
