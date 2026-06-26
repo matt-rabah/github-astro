@@ -1,0 +1,27 @@
+----- CLI crash report at 2026-06-26T19:33:09.413Z
+Error Trace
+Error: {}
+    at <anonymous> (/Users/mattrabah/Downloads/github-astro/astrowind/node_modules/@wix/cli-ui-kit/src/hooks/use-exit.ts:13:14)
+    at Object.onError (/Users/mattrabah/Downloads/github-astro/astrowind/node_modules/@wix/cli-ui-kit/src/hooks/use-async.ts:93:23)
+    at <anonymous> (/Users/mattrabah/Downloads/github-astro/astrowind/node_modules/node_modules/react-async-hook/src/index.ts:274:27)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+Error Info
+{}
+----- CLI crash report at 2026-06-26T19:33:51.952Z
+Error Trace
+Error: {}
+    at <anonymous> (/Users/mattrabah/Downloads/github-astro/astrowind/node_modules/@wix/cli-ui-kit/src/hooks/use-exit.ts:13:14)
+    at Object.onError (/Users/mattrabah/Downloads/github-astro/astrowind/node_modules/@wix/cli-ui-kit/src/hooks/use-async.ts:93:23)
+    at <anonymous> (/Users/mattrabah/Downloads/github-astro/astrowind/node_modules/node_modules/react-async-hook/src/index.ts:274:27)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+Error Info
+{}
+----- CLI crash report at 2026-06-26T19:35:03.193Z
+Error Trace
+Error: {}
+    at <anonymous> (/Users/mattrabah/Downloads/github-astro/astrowind/node_modules/@wix/cli-ui-kit/src/hooks/use-exit.ts:13:14)
+    at Object.onError (/Users/mattrabah/Downloads/github-astro/astrowind/node_modules/@wix/cli-ui-kit/src/hooks/use-async.ts:93:23)
+    at <anonymous> (/Users/mattrabah/Downloads/github-astro/astrowind/node_modules/node_modules/react-async-hook/src/index.ts:274:27)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+Error Info
+{}
