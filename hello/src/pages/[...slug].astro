@@ -1,6 +1,6 @@
 ---
-import { SEO } from '@wix/seo/components';
-import { loadSEOTagsServiceConfig } from '@wix/seo/services';
+import { SEO } from "@wix/seo/components";
+import { loadSEOTagsServiceConfig } from "@wix/seo/services";
 import { Head } from "@/components/Head";
 import AppRouter from "@/components/Router";
 import "@wix/wix-vibe-plugins/plugins-vars.css";
@@ -10,7 +10,7 @@ import "@/styles/global.css";
 const seoTagsServiceConfig = await loadSEOTagsServiceConfig({
   pageUrl: Astro.url.href,
   itemData: {
-    pageName: 'Home',
+    pageName: "Home",
   },
 });
 ---
