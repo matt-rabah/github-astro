@@ -32,4 +32,4 @@ configure({
 });
 
 // Make React's act available globally for testing-library
-(global as any).IS_REACT_ACT_ENVIRONMENT = true;
+(globalThis as any).IS_REACT_ACT_ENVIRONMENT = true;
