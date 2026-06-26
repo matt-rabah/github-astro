@@ -1,11 +1,11 @@
 export default async function loadFramewire(withInit) {
-    // Send error to parent using framewire
-    const isDev = import.meta.env?.DEV ?? false;
-    const isIframe = window.self !== window.top;
+  // Send error to parent using framewire
+  const isDev = import.meta.env?.DEV ?? false;
+  const isIframe = window.self !== window.top;
 
-    if (!isDev || !isIframe) {
-      return;
-    }
+  if (!isDev || !isIframe) {
+    return;
+  }
 
   try {
     if (!globalThis.framewire) {
