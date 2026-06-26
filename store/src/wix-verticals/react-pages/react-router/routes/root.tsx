@@ -37,6 +37,9 @@ export async function rootRouteLoader({ request }: { request: Request }) {
       loadCurrentCartServiceConfig(),
       loadSEOTagsServiceConfig({
         pageUrl: request.url,
+        itemData: {
+          pageName: "Home",
+        },
       }),
     ]);
 

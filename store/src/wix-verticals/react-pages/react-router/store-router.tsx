@@ -22,7 +22,7 @@ import {
 import { defaultStoreCollectionRouteRedirectLoader } from "./routes/store-redirect";
 import { Cart } from "./routes/cart";
 
-export const routes = [
+export const routes: any[] = [
   {
     path: "/",
     element: <Navigate to="/store" />,

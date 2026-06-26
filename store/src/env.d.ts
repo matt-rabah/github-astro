@@ -16,10 +16,29 @@ declare global {
 
   interface ImportMetaEnv {
     readonly BASE_NAME: string;
+    readonly SSR?: boolean;
   }
 }
 
 declare module "react-router-dom" {
+  export interface IndexRouteObject {
+    routeMetadata?: PageMetadata;
+  }
+  export interface NonIndexRouteObject {
+    routeMetadata?: PageMetadata;
+  }
+}
+
+declare module "react-router" {
+  export interface IndexRouteObject {
+    routeMetadata?: PageMetadata;
+  }
+  export interface NonIndexRouteObject {
+    routeMetadata?: PageMetadata;
+  }
+}
+
+declare module "@remix-run/router" {
   export interface IndexRouteObject {
     routeMetadata?: PageMetadata;
   }

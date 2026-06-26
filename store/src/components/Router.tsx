@@ -117,7 +117,7 @@ const router = createBrowserRouter(
         },
       ],
     },
-  ],
+  ] as any,
   {
     basename: import.meta.env.BASE_NAME,
   },
