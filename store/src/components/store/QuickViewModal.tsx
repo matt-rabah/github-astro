@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react';
-import { productsV3 } from '@wix/stores';
+import { useEffect, useState } from "react";
+import { productsV3 } from "@wix/stores";
 
-import ProductDetails from './ProductDetails';
-import { useNavigation } from '../NavigationContext';
+import ProductDetails from "./ProductDetails";
+import { useNavigation } from "../NavigationContext";
 
-import { CartLineItemAdded } from '@/components/ui/ecom/Cart';
-import type { LineItem } from '@wix/ecom/services';
+import { CartLineItemAdded } from "@/components/ui/ecom/Cart";
+import type { LineItem } from "@wix/ecom/services";
 
 interface QuickViewModalProps {
   product: productsV3.V3Product;
@@ -29,17 +29,17 @@ export default function QuickViewModal({
   // Handle escape key to close modal
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose();
+      if (e.key === "Escape") onClose();
     };
 
     if (isOpen) {
-      document.addEventListener('keydown', handleEscape);
-      document.body.style.overflow = 'hidden';
+      document.addEventListener("keydown", handleEscape);
+      document.body.style.overflow = "hidden";
     }
 
     return () => {
-      document.removeEventListener('keydown', handleEscape);
-      document.body.style.overflow = 'unset';
+      document.removeEventListener("keydown", handleEscape);
+      document.body.style.overflow = "unset";
     };
   }, [isOpen, onClose]);
 
@@ -78,8 +78,8 @@ export default function QuickViewModal({
             return onAddedToCart((lineItems: LineItem[] | undefined) => {
               if (!lineItems) return;
               const myLineItemIsThere = lineItems.some(
-                lineItem =>
-                  lineItem.catalogReference?.catalogItemId === product._id
+                (lineItem) =>
+                  lineItem.catalogReference?.catalogItemId === product._id,
               );
               if (!myLineItemIsThere) return;
 
@@ -100,7 +100,7 @@ export default function QuickViewModal({
       {/* Modal Container */}
       <div
         className="relative w-full max-w-6xl mx-4 max-h-[90vh] bg-surface-modal rounded-2xl border border-brand-subtle shadow-2xl animate-[slideUp_0.3s_ease-out] overflow-hidden"
-        onClick={e => e.stopPropagation()}
+        onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
         <button

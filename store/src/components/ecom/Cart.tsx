@@ -3,7 +3,7 @@ import {
   QuantityInput,
   QuantityIncrement,
   QuantityReset,
-} from '@/components/ui/components/quantity';
+} from "@/components/ui/components/quantity";
 import {
   CartTotalsPrice,
   CartTotalsDiscount,
@@ -20,23 +20,23 @@ import {
   CartCouponTrigger,
   CartCouponClear,
   CartErrors,
-} from '@/components/ui/ecom/Cart';
+} from "@/components/ui/ecom/Cart";
 import {
   LineItemImage,
   LineItemTitle,
   LineItemSelectedOptions,
   LineItemSelectedOptionRepeater,
   LineItemQuantity,
-} from '@/components/ui/ecom/LineItem';
-import { Label } from '@/components/ui/label';
+} from "@/components/ui/ecom/LineItem";
+import { Label } from "@/components/ui/label";
 
-import { CommerceActionsCheckout } from '@/components/ui/ecom/Commerce';
+import { CommerceActionsCheckout } from "@/components/ui/ecom/Commerce";
 import {
   SelectedOptionText,
   SelectedOptionColor,
-} from '@/components/ui/ecom/SelectedOption';
-import { useNavigation } from '../NavigationContext';
-import { Button } from '@/components/ui/button';
+} from "@/components/ui/ecom/SelectedOption";
+import { useNavigation } from "../NavigationContext";
+import { Button } from "@/components/ui/button";
 
 export default function CartContent() {
   return (
@@ -52,7 +52,7 @@ export default function CartContent() {
               ref={ref as React.Ref<HTMLParagraphElement>}
               className="text-content-secondary text-xl"
             >
-              {totalItems} {totalItems === 1 ? 'item' : 'items'} in your cart
+              {totalItems} {totalItems === 1 ? "item" : "items"} in your cart
             </p>
           )}
         </CartSummary>
@@ -136,8 +136,8 @@ export default function CartContent() {
                     <CartSummary asChild>
                       {({ totalItems }) => (
                         <span>
-                          Subtotal ({totalItems}{' '}
-                          {totalItems === 1 ? 'item' : 'items'})
+                          Subtotal ({totalItems}{" "}
+                          {totalItems === 1 ? "item" : "items"})
                         </span>
                       )}
                     </CartSummary>

@@ -7,5 +7,5 @@ import wixPages from "@wix/astro-pages";
 // https://astro.build/config
 export default defineConfig({
   site: "https://example.com",
-  integrations: [wix(), wixPages(), sitemap()]
+  integrations: [wix(), wixPages(), sitemap()],
 });

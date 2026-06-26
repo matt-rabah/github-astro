@@ -25,7 +25,7 @@ export default defineConfig({
             injectScript(
               "page",
               `import loadFramewire from "framewire.js";
-              loadFramewire(true);`
+              loadFramewire(true);`,
             );
           }
         },
@@ -42,13 +42,13 @@ export default defineConfig({
   ],
   vite: {
     plugins: [customErrorOverlayPlugin()],
-    css: !isBuild ? {
-      postcss: {
-        plugins: [
-          postcssPseudoToData(),
-        ],
-      },
-    } : undefined,
+    css: !isBuild
+      ? {
+          postcss: {
+            plugins: [postcssPseudoToData()],
+          },
+        }
+      : undefined,
   },
   ...(isBuild && { adapter: cloudProviderFetchAdapter({}) }),
   devToolbar: {
@@ -62,6 +62,6 @@ export default defineConfig({
     host: true,
   },
   security: {
-    checkOrigin: false
-  }
+    checkOrigin: false,
+  },
 });

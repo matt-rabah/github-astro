@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   FacebookShareButton,
   LinkedinShareButton,
   TwitterShareButton,
-} from 'react-share';
+} from "react-share";
 
 interface SocialSharingButtonsProps {
   url?: string;
@@ -14,9 +14,9 @@ interface SocialSharingButtonsProps {
 }
 
 export const SocialSharingButtons: React.FC<SocialSharingButtonsProps> = ({
-  url = typeof window !== 'undefined' ? window.location.href : '',
-  title = 'Check out this amazing product',
-  className = '',
+  url = typeof window !== "undefined" ? window.location.href : "",
+  title = "Check out this amazing product",
+  className = "",
 }) => {
   const [copySuccess, setCopySuccess] = useState(false);
 
@@ -25,7 +25,7 @@ export const SocialSharingButtons: React.FC<SocialSharingButtonsProps> = ({
       await navigator.clipboard.writeText(url);
       return true;
     } catch (err) {
-      console.error('Failed to copy to clipboard:', err);
+      console.error("Failed to copy to clipboard:", err);
       return false;
     }
   };

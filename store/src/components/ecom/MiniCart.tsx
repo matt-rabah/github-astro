@@ -1,12 +1,12 @@
-import { useState, useEffect } from 'react';
-import { createPortal } from 'react-dom';
+import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import {
   QuantityDecrement,
   QuantityInput,
   QuantityIncrement,
   QuantityReset,
-} from '@/components/ui/components/quantity';
-import { CommerceActionsCheckout } from '@/components/ui/ecom/Commerce';
+} from "@/components/ui/components/quantity";
+import { CommerceActionsCheckout } from "@/components/ui/ecom/Commerce";
 import {
   CartSummary,
   CartLineItems,
@@ -20,27 +20,27 @@ import {
   CartTotalsShipping,
   CartTotalsTax,
   CartTotalsTotal,
-} from '@/components/ui/ecom/Cart';
+} from "@/components/ui/ecom/Cart";
 import {
   LineItemImage,
   LineItemTitle,
   LineItemSelectedOptions,
   LineItemSelectedOptionRepeater,
   LineItemQuantity,
-} from '@/components/ui/ecom/LineItem';
+} from "@/components/ui/ecom/LineItem";
 import {
   SelectedOptionText,
   SelectedOptionColor,
-} from '@/components/ui/ecom/SelectedOption';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Card, CardContent } from '@/components/ui/card';
-import { Label } from '@/components/ui/label';
+} from "@/components/ui/ecom/SelectedOption";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Card, CardContent } from "@/components/ui/card";
+import { Label } from "@/components/ui/label";
 import {
   useMiniCartContext,
   MINI_CART_PORTAL_ID,
-} from '../MiniCartContextProvider';
+} from "../MiniCartContextProvider";
 
 // Mini coupon form for the cart sidebar
 const CouponFormMini = ({
@@ -67,20 +67,20 @@ const CouponFormMini = ({
           size="sm"
           className="text-status-danger hover:text-status-error text-xs h-auto p-0"
         >
-          {isLoading ? 'Removing...' : 'Remove'}
+          {isLoading ? "Removing..." : "Remove"}
         </Button>
       </div>
     );
   }
 
-  const [code, setCode] = useState('');
+  const [code, setCode] = useState("");
   const [isExpanded, setIsExpanded] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (code.trim()) {
       apply(code.trim());
-      setCode('');
+      setCode("");
     }
   };
 
@@ -103,7 +103,7 @@ const CouponFormMini = ({
         <Input
           type="text"
           value={code}
-          onChange={e => setCode(e.target.value)}
+          onChange={(e) => setCode(e.target.value)}
           placeholder="Promo code"
           className="flex-1 px-2 py-1 text-xs bg-surface-interactive border border-surface-interactive rounded text-content-primary placeholder:text-content-muted focus:border-brand-light focus:outline-none"
           disabled={isLoading}
@@ -115,7 +115,7 @@ const CouponFormMini = ({
           size="sm"
           className="px-2 py-1 text-xs font-medium h-auto"
         >
-          {isLoading ? '...' : 'Apply Coupon'}
+          {isLoading ? "..." : "Apply Coupon"}
         </Button>
       </div>
 
@@ -182,18 +182,18 @@ export function MiniCartContent() {
 
   // Lock body scroll when modal is open
   useEffect(() => {
-    if (typeof document !== 'undefined') {
+    if (typeof document !== "undefined") {
       if (isOpen) {
-        document.body.style.overflow = 'hidden';
+        document.body.style.overflow = "hidden";
       } else {
-        document.body.style.overflow = 'unset';
+        document.body.style.overflow = "unset";
       }
     }
 
     // Cleanup function to restore scroll when component unmounts
     return () => {
-      if (typeof document !== 'undefined') {
-        document.body.style.overflow = 'unset';
+      if (typeof document !== "undefined") {
+        document.body.style.overflow = "unset";
       }
     };
   }, [isOpen]);
@@ -205,7 +205,7 @@ export function MiniCartContent() {
   const getPortalTarget = () => {
     let portalTarget = document.getElementById(MINI_CART_PORTAL_ID);
     if (!portalTarget) {
-      portalTarget = document.createElement('div');
+      portalTarget = document.createElement("div");
       portalTarget.id = MINI_CART_PORTAL_ID;
       document.body.appendChild(portalTarget);
     }
@@ -213,7 +213,7 @@ export function MiniCartContent() {
   };
 
   // Only render portal on client side
-  if (typeof document === 'undefined') return null;
+  if (typeof document === "undefined") return null;
 
   return createPortal(
     <div
@@ -222,7 +222,7 @@ export function MiniCartContent() {
     >
       <div
         className="fixed right-0 top-0 h-full w-full max-w-md bg-surface-modal shadow-xl flex flex-col bg-background"
-        onClick={e => e.stopPropagation()}
+        onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center justify-between p-6 border-b border-surface-subtle flex-shrink-0">
           <CartSummary asChild>
@@ -342,8 +342,8 @@ export function MiniCartContent() {
                 <CartSummary asChild>
                   {({ totalItems }) => (
                     <span>
-                      Subtotal ({totalItems}{' '}
-                      {totalItems === 1 ? 'item' : 'items'})
+                      Subtotal ({totalItems}{" "}
+                      {totalItems === 1 ? "item" : "items"})
                     </span>
                   )}
                 </CartSummary>
@@ -370,6 +370,6 @@ export function MiniCartContent() {
         </div>
       </div>
     </div>,
-    getPortalTarget()
+    getPortalTarget(),
   );
 }

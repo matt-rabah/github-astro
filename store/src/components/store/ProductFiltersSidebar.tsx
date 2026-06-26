@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { ProductList } from '@wix/stores/components';
-import * as Filter from '@/components/ui/store/Filter';
+import React, { useState } from "react";
+import { ProductList } from "@wix/stores/components";
+import * as Filter from "@/components/ui/store/Filter";
 
 interface ProductFiltersSidebarProps {
   className?: string;
@@ -8,7 +8,7 @@ interface ProductFiltersSidebarProps {
 
 // Enhanced Filter components integrated with real ProductList filtering
 export const ProductFiltersSidebar: React.FC<ProductFiltersSidebarProps> = ({
-  className = '',
+  className = "",
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -49,7 +49,7 @@ export const ProductFiltersSidebar: React.FC<ProductFiltersSidebarProps> = ({
                   >
                     <svg
                       className={`w-5 h-5 transition-transform ${
-                        isExpanded ? 'rotate-180' : ''
+                        isExpanded ? "rotate-180" : ""
                       }`}
                       fill="none"
                       viewBox="0 0 24 24"
@@ -68,7 +68,7 @@ export const ProductFiltersSidebar: React.FC<ProductFiltersSidebarProps> = ({
 
               {/* Filter Content - Consolidated All Filters */}
               <div
-                className={`space-y-6 ${isExpanded ? 'block' : 'hidden lg:block'}`}
+                className={`space-y-6 ${isExpanded ? "block" : "hidden lg:block"}`}
               >
                 <Filter.FilterOptions>
                   <Filter.FilterOptionRepeater>

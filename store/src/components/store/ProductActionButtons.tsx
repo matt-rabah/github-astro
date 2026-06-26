@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 import {
   ProductActionAddToCart,
   ProductActionBuyNow,
   ProductActionPreOrder,
-} from '@/components/ui/store/Product';
+} from "@/components/ui/store/Product";
 
 interface ProductActionButtonsProps {
   showBuyNow?: boolean;

@@ -1,7 +1,7 @@
-import React from 'react';
-import { cva, type VariantProps } from 'class-variance-authority';
-import { cn } from '@/lib/utils';
-import { Quantity as QuantityPrimitive } from '@wix/headless-components/react';
+import React from "react";
+import { cva, type VariantProps } from "class-variance-authority";
+import { cn } from "@/lib/utils";
+import { Quantity as QuantityPrimitive } from "@wix/headless-components/react";
 
 /**
  * Root component for quantity selection functionality.
@@ -27,28 +27,29 @@ export const Quantity = QuantityPrimitive.Root;
 
 // Quantity Decrement Component
 const quantityDecrementVariants = cva(
-  'hover:bg-surface-primary transition-colors',
+  "hover:bg-surface-primary transition-colors",
   {
     variants: {
       variant: {
-        default: 'px-3 py-1',
-        button: '', // For asChild usage with Button
+        default: "px-3 py-1",
+        button: "", // For asChild usage with Button
       },
       size: {
-        default: 'px-3 py-1',
-        sm: 'px-2 py-1',
-        lg: 'px-4 py-2',
+        default: "px-3 py-1",
+        sm: "px-2 py-1",
+        lg: "px-4 py-2",
       },
     },
     defaultVariants: {
-      variant: 'default',
-      size: 'default',
+      variant: "default",
+      size: "default",
     },
-  }
+  },
 );
 
-export interface QuantityDecrementProps
-  extends VariantProps<typeof quantityDecrementVariants> {
+export interface QuantityDecrementProps extends VariantProps<
+  typeof quantityDecrementVariants
+> {
   className?: string;
   children?: React.ReactNode;
   [key: string]: any;
@@ -83,36 +84,37 @@ export const QuantityDecrement = React.forwardRef<any, QuantityDecrementProps>(
         {children}
       </QuantityPrimitive.Decrement>
     );
-  }
+  },
 );
 
-QuantityDecrement.displayName = 'QuantityDecrement';
+QuantityDecrement.displayName = "QuantityDecrement";
 
 // Quantity Input Component
 const quantityInputVariants = cva(
-  'text-center border-x focus:outline-none focus:ring-2',
+  "text-center border-x focus:outline-none focus:ring-2",
   {
     variants: {
       variant: {
-        default: 'border-brand-light focus:ring-brand-primary',
+        default: "border-brand-light focus:ring-brand-primary",
         primary:
-          'border-brand-light focus:ring-brand-primary bg-surface-primary text-content-primary',
+          "border-brand-light focus:ring-brand-primary bg-surface-primary text-content-primary",
       },
       size: {
-        default: 'w-16 py-1',
-        sm: 'w-12 py-1 text-sm',
-        lg: 'w-20 py-2',
+        default: "w-16 py-1",
+        sm: "w-12 py-1 text-sm",
+        lg: "w-20 py-2",
       },
     },
     defaultVariants: {
-      variant: 'default',
-      size: 'default',
+      variant: "default",
+      size: "default",
     },
-  }
+  },
 );
 
-export interface QuantityInputProps
-  extends VariantProps<typeof quantityInputVariants> {
+export interface QuantityInputProps extends VariantProps<
+  typeof quantityInputVariants
+> {
   className?: string;
   [key: string]: any;
 }
@@ -142,35 +144,36 @@ export const QuantityInput = React.forwardRef<any, QuantityInputProps>(
         className={cn(quantityInputVariants({ variant, size }), className)}
       />
     );
-  }
+  },
 );
 
-QuantityInput.displayName = 'QuantityInput';
+QuantityInput.displayName = "QuantityInput";
 
 // Quantity Increment Component
 const quantityIncrementVariants = cva(
-  'hover:bg-surface-primary transition-colors',
+  "hover:bg-surface-primary transition-colors",
   {
     variants: {
       variant: {
-        default: 'px-3 py-1',
-        button: '', // For asChild usage with Button
+        default: "px-3 py-1",
+        button: "", // For asChild usage with Button
       },
       size: {
-        default: 'px-3 py-1',
-        sm: 'px-2 py-1',
-        lg: 'px-4 py-2',
+        default: "px-3 py-1",
+        sm: "px-2 py-1",
+        lg: "px-4 py-2",
       },
     },
     defaultVariants: {
-      variant: 'default',
-      size: 'default',
+      variant: "default",
+      size: "default",
     },
-  }
+  },
 );
 
-export interface QuantityIncrementProps
-  extends VariantProps<typeof quantityIncrementVariants> {
+export interface QuantityIncrementProps extends VariantProps<
+  typeof quantityIncrementVariants
+> {
   className?: string;
   children?: React.ReactNode;
   [key: string]: any;
@@ -205,35 +208,36 @@ export const QuantityIncrement = React.forwardRef<any, QuantityIncrementProps>(
         {children}
       </QuantityPrimitive.Increment>
     );
-  }
+  },
 );
 
-QuantityIncrement.displayName = 'QuantityIncrement';
+QuantityIncrement.displayName = "QuantityIncrement";
 
 // Quantity Reset Component
 const quantityResetVariants = cva(
-  'text-status-danger hover:text-status-danger/80 hover:bg-status-danger/10 rounded transition-colors',
+  "text-status-danger hover:text-status-danger/80 hover:bg-status-danger/10 rounded transition-colors",
   {
     variants: {
       variant: {
-        default: 'px-2 py-1 text-xs',
-        button: '', // For asChild usage with Button
+        default: "px-2 py-1 text-xs",
+        button: "", // For asChild usage with Button
       },
       size: {
-        default: 'px-2 py-1 text-xs',
-        sm: 'px-1 py-0.5 text-xs',
-        lg: 'px-3 py-1 text-sm',
+        default: "px-2 py-1 text-xs",
+        sm: "px-1 py-0.5 text-xs",
+        lg: "px-3 py-1 text-sm",
       },
     },
     defaultVariants: {
-      variant: 'default',
-      size: 'default',
+      variant: "default",
+      size: "default",
     },
-  }
+  },
 );
 
-export interface QuantityResetProps
-  extends VariantProps<typeof quantityResetVariants> {
+export interface QuantityResetProps extends VariantProps<
+  typeof quantityResetVariants
+> {
   className?: string;
   children?: React.ReactNode;
   [key: string]: any;
@@ -269,7 +273,7 @@ export const QuantityReset = React.forwardRef<any, QuantityResetProps>(
         {children}
       </QuantityPrimitive.Reset>
     );
-  }
+  },
 );
 
-QuantityReset.displayName = 'QuantityReset';
+QuantityReset.displayName = "QuantityReset";

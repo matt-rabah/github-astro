@@ -4,9 +4,9 @@ import {
   useState,
   useEffect,
   type ReactNode,
-} from 'react';
+} from "react";
 
-export const MINI_CART_PORTAL_ID = 'mini-cart-portal';
+export const MINI_CART_PORTAL_ID = "mini-cart-portal";
 
 interface MiniCartModalContextValue {
   isOpen: boolean;
@@ -62,8 +62,8 @@ export function useMiniCartContext(): MiniCartModalContextValue {
   const context = useContext(MiniCartModalContext);
   if (!context) {
     throw new Error(
-      'useMiniCartContext must be used within a MiniCartContextProvider. ' +
-        'Make sure your component is wrapped with <MiniCartContextProvider>.'
+      "useMiniCartContext must be used within a MiniCartContextProvider. " +
+        "Make sure your component is wrapped with <MiniCartContextProvider>.",
     );
   }
   return context;
@@ -84,13 +84,13 @@ export function MiniCartContextProvider({
   // Cleanup portal element when provider unmounts
   useEffect(() => {
     return () => {
-      if (typeof document !== 'undefined') {
+      if (typeof document !== "undefined") {
         const portalTarget = document.getElementById(MINI_CART_PORTAL_ID);
         if (portalTarget) {
           portalTarget.remove();
         }
         // Restore body scroll
-        document.body.style.overflow = 'unset';
+        document.body.style.overflow = "unset";
       }
     };
   }, []);

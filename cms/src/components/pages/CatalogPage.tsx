@@ -1,19 +1,19 @@
-import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { BaseCrudService } from '@/integrations';
-import { CatalogItems } from '@/entities';
-import { LoadingSpinner } from '@/components/ui/loading-spinner';
-import { Image } from '@/components/ui/image';
-import { Search, ArrowRight } from 'lucide-react';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { BaseCrudService } from "@/integrations";
+import { CatalogItems } from "@/entities";
+import { LoadingSpinner } from "@/components/ui/loading-spinner";
+import { Image } from "@/components/ui/image";
+import { Search, ArrowRight } from "lucide-react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export default function CatalogPage() {
   const [items, setItems] = useState<CatalogItems[]>([]);
   const [filteredItems, setFilteredItems] = useState<CatalogItems[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [searchQuery, setSearchQuery] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [categories, setCategories] = useState<string[]>([]);
   const [hasNext, setHasNext] = useState(false);
   const [skip, setSkip] = useState(0);
@@ -32,21 +32,21 @@ export default function CatalogPage() {
       if (loadMore) {
         setIsLoadingMore(true);
       }
-      
+
       const result = await BaseCrudService.getAll<CatalogItems>(
-        'catalogitems',
+        "catalogitems",
         {},
-        { limit: 12, skip: loadMore ? skip : 0 }
+        { limit: 12, skip: loadMore ? skip : 0 },
       );
 
       if (loadMore) {
-        setItems(prev => [...prev, ...result.items]);
+        setItems((prev) => [...prev, ...result.items]);
       } else {
         setItems(result.items);
-        
+
         // Extract unique categories
         const uniqueCategories = Array.from(
-          new Set(result.items.map(item => item.category).filter(Boolean))
+          new Set(result.items.map((item) => item.category).filter(Boolean)),
         ) as string[];
         setCategories(uniqueCategories);
       }
@@ -54,7 +54,7 @@ export default function CatalogPage() {
       setHasNext(result.hasNext);
       setSkip(result.nextSkip || 0);
     } catch (error) {
-      console.error('Failed to load items:', error);
+      console.error("Failed to load items:", error);
     } finally {
       setIsLoading(false);
       setIsLoadingMore(false);
@@ -65,18 +65,18 @@ export default function CatalogPage() {
     let filtered = [...items];
 
     // Filter by category
-    if (selectedCategory !== 'all') {
-      filtered = filtered.filter(item => item.category === selectedCategory);
+    if (selectedCategory !== "all") {
+      filtered = filtered.filter((item) => item.category === selectedCategory);
     }
 
     // Filter by search query
     if (searchQuery.trim()) {
       const query = searchQuery.toLowerCase();
       filtered = filtered.filter(
-        item =>
+        (item) =>
           item.itemName?.toLowerCase().includes(query) ||
           item.shortDescription?.toLowerCase().includes(query) ||
-          item.category?.toLowerCase().includes(query)
+          item.category?.toLowerCase().includes(query),
       );
     }
 
@@ -109,7 +109,8 @@ export default function CatalogPage() {
             Complete Catalog
           </h1>
           <p className="font-paragraph text-lg md:text-xl max-w-3xl leading-relaxed opacity-95">
-            Explore our comprehensive collection of items. Use the filters below to find exactly what you're looking for.
+            Explore our comprehensive collection of items. Use the filters below
+            to find exactly what you're looking for.
           </p>
         </div>
       </section>
@@ -133,11 +134,11 @@ export default function CatalogPage() {
             {/* Category Filter */}
             <div className="flex flex-wrap gap-3">
               <button
-                onClick={() => setSelectedCategory('all')}
+                onClick={() => setSelectedCategory("all")}
                 className={`px-6 py-3 font-paragraph text-base transition-all ${
-                  selectedCategory === 'all'
-                    ? 'bg-primary text-primary-foreground'
-                    : 'bg-background text-foreground hover:bg-primary hover:text-primary-foreground'
+                  selectedCategory === "all"
+                    ? "bg-primary text-primary-foreground"
+                    : "bg-background text-foreground hover:bg-primary hover:text-primary-foreground"
                 }`}
               >
                 All
@@ -148,8 +149,8 @@ export default function CatalogPage() {
                   onClick={() => setSelectedCategory(category)}
                   className={`px-6 py-3 font-paragraph text-base transition-all ${
                     selectedCategory === category
-                      ? 'bg-primary text-primary-foreground'
-                      : 'bg-background text-foreground hover:bg-primary hover:text-primary-foreground'
+                      ? "bg-primary text-primary-foreground"
+                      : "bg-background text-foreground hover:bg-primary hover:text-primary-foreground"
                   }`}
                 >
                   {category}
@@ -161,7 +162,8 @@ export default function CatalogPage() {
           {/* Results Count */}
           <div className="mt-6">
             <p className="font-paragraph text-base text-secondary-foreground opacity-70">
-              Showing {filteredItems.length} {filteredItems.length === 1 ? 'item' : 'items'}
+              Showing {filteredItems.length}{" "}
+              {filteredItems.length === 1 ? "item" : "items"}
             </p>
           </div>
         </div>
@@ -181,8 +183,11 @@ export default function CatalogPage() {
                   >
                     <div className="aspect-[4/3] overflow-hidden">
                       <Image
-                        src={item.mainImage || 'https://static.wixstatic.com/media/48031e_e09c0e58fc944c2b90fd33651eb0fb85~mv2.png?originWidth=576&originHeight=448'}
-                        alt={item.itemName || 'Catalog item'}
+                        src={
+                          item.mainImage ||
+                          "https://static.wixstatic.com/media/48031e_e09c0e58fc944c2b90fd33651eb0fb85~mv2.png?originWidth=576&originHeight=448"
+                        }
+                        alt={item.itemName || "Catalog item"}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         width={600}
                       />
@@ -209,7 +214,7 @@ export default function CatalogPage() {
               </div>
 
               {/* Load More Button */}
-              {hasNext && selectedCategory === 'all' && !searchQuery && (
+              {hasNext && selectedCategory === "all" && !searchQuery && (
                 <div className="text-center mt-12">
                   <button
                     onClick={handleLoadMore}
@@ -238,8 +243,8 @@ export default function CatalogPage() {
               </p>
               <button
                 onClick={() => {
-                  setSearchQuery('');
-                  setSelectedCategory('all');
+                  setSearchQuery("");
+                  setSelectedCategory("all");
                 }}
                 className="inline-flex items-center gap-2 font-paragraph text-lg text-primary hover:gap-4 transition-all"
               >

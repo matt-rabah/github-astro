@@ -1,6 +1,6 @@
-import React from 'react';
-import { cn } from '@/lib/utils';
-import { Choice as ChoicePrimitive } from '@wix/stores/components';
+import React from "react";
+import { cn } from "@/lib/utils";
+import { Choice as ChoicePrimitive } from "@wix/stores/components";
 
 /**
  * Root component for product variant choices (text, color, or free text).
@@ -46,7 +46,7 @@ export const ChoiceText = React.forwardRef<
       ref={ref}
       className={cn(
         "inline-flex items-center px-2 py-1 border transition-all duration-200 border-color-swatch hover:border-color-swatch-hover hover:scale-105 data-[selected='true']:border-accent-strong data-[selected='true']:shadow-lg data-[selected='true']:bg-primary data-[selected='true']:scale-115 disabled:opacity-50 disabled:cursor-not-allowed disabled:grayscale",
-        props.className
+        props.className,
       )}
     >
       {props.children}
@@ -54,7 +54,7 @@ export const ChoiceText = React.forwardRef<
   );
 });
 
-ChoiceText.displayName = 'ChoiceText';
+ChoiceText.displayName = "ChoiceText";
 
 /**
  * Color-based choice component for product variants like color swatches.
@@ -94,7 +94,7 @@ export const ChoiceColor = React.forwardRef<
       ref={ref}
       className={cn(
         "w-10 h-10 rounded-full border-4 transition-all duration-200 border-color-swatch hover:border-color-swatch-hover hover:scale-105 data-[selected='true']:border-accent-strong data-[selected='true']:ring-1 data-[selected='true']:scale-115 disabled:opacity-50 disabled:cursor-not-allowed disabled:grayscale",
-        props.className
+        props.className,
       )}
     >
       {props.children}
@@ -102,7 +102,7 @@ export const ChoiceColor = React.forwardRef<
   );
 });
 
-ChoiceColor.displayName = 'ChoiceColor';
+ChoiceColor.displayName = "ChoiceColor";
 
 /**
  * Free text input choice component for custom product options.
@@ -135,8 +135,8 @@ export const ChoiceFreeText = React.forwardRef<
       {...props}
       ref={ref}
       className={cn(
-        'p-3 border-brand-light bg-surface-primary text-content-primary placeholder:text-content-subtle resize-none',
-        props.className
+        "p-3 border-brand-light bg-surface-primary text-content-primary placeholder:text-content-subtle resize-none",
+        props.className,
       )}
     >
       {props.children}
@@ -144,4 +144,4 @@ export const ChoiceFreeText = React.forwardRef<
   );
 });
 
-ChoiceFreeText.displayName = 'ChoiceFreeText';
+ChoiceFreeText.displayName = "ChoiceFreeText";

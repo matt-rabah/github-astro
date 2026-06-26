@@ -1,9 +1,9 @@
-import React from 'react';
-import { cva, type VariantProps } from 'class-variance-authority';
-import { cn } from '@/lib/utils';
-import { Product as ProductPrimitive } from '@wix/stores/components';
-import { Button } from '@/components/ui/button';
-import { Badge } from '../badge';
+import React from "react";
+import { cva, type VariantProps } from "class-variance-authority";
+import { cn } from "@/lib/utils";
+import { Product as ProductPrimitive } from "@wix/stores/components";
+import { Button } from "@/components/ui/button";
+import { Badge } from "../badge";
 
 /**
  * Root component for product display and interaction.
@@ -33,20 +33,21 @@ import { Badge } from '../badge';
  */
 export const Product = ProductPrimitive.Root;
 
-const productNameVariants = cva('font-theme-heading', {
+const productNameVariants = cva("font-theme-heading", {
   variants: {
     variant: {
-      heading: 'text-4xl font-bold text-content-primary mb-4',
-      paragraph: '',
+      heading: "text-4xl font-bold text-content-primary mb-4",
+      paragraph: "",
     },
   },
   defaultVariants: {
-    variant: 'heading',
+    variant: "heading",
   },
 });
 
 export interface ProductNameProps
-  extends React.ComponentPropsWithoutRef<typeof ProductPrimitive.Name>,
+  extends
+    React.ComponentPropsWithoutRef<typeof ProductPrimitive.Name>,
     VariantProps<typeof productNameVariants> {}
 
 /**
@@ -81,7 +82,7 @@ export const ProductName = React.forwardRef<
   );
 });
 
-ProductName.displayName = 'ProductName';
+ProductName.displayName = "ProductName";
 
 /**
  * Displays the product description.
@@ -119,14 +120,14 @@ export const ProductDescription = React.forwardRef<
     <ProductPrimitive.Description
       {...props}
       ref={ref}
-      className={cn('text-content-secondary leading-relaxed', props.className)}
+      className={cn("text-content-secondary leading-relaxed", props.className)}
     >
       {props.children}
     </ProductPrimitive.Description>
   );
 });
 
-ProductDescription.displayName = 'ProductDescription';
+ProductDescription.displayName = "ProductDescription";
 
 /**
  * Displays the current product price.
@@ -159,8 +160,8 @@ export const ProductPrice = React.forwardRef<
       {...props}
       ref={ref}
       className={cn(
-        'text-3xl font-bold text-content-primary font-theme-heading',
-        props.className
+        "text-3xl font-bold text-content-primary font-theme-heading",
+        props.className,
       )}
       data-item-field="variantsInfo.variants[0].price.actualPrice.amount"
     >
@@ -169,7 +170,7 @@ export const ProductPrice = React.forwardRef<
   );
 });
 
-ProductPrice.displayName = 'ProductPrice';
+ProductPrice.displayName = "ProductPrice";
 
 /**
  * Displays the original/compare-at price (usually crossed out).
@@ -195,8 +196,8 @@ export const ProductCompareAtPrice = React.forwardRef<
       {...props}
       ref={ref}
       className={cn(
-        'text-lg font-medium text-content-faded line-through',
-        props.className
+        "text-lg font-medium text-content-faded line-through",
+        props.className,
       )}
       data-item-field="variantsInfo.variants[0].price.compareAtPrice.amount"
     >
@@ -205,7 +206,7 @@ export const ProductCompareAtPrice = React.forwardRef<
   );
 });
 
-ProductCompareAtPrice.displayName = 'ProductCompareAtPrice';
+ProductCompareAtPrice.displayName = "ProductCompareAtPrice";
 
 /**
  * Displays the product slug/URL identifier.
@@ -228,14 +229,14 @@ export const ProductSlug = React.forwardRef<
     <ProductPrimitive.Slug
       {...props}
       ref={ref}
-      className={cn('text-content-secondary text-sm', props.className)}
+      className={cn("text-content-secondary text-sm", props.className)}
     >
       {props.children}
     </ProductPrimitive.Slug>
   );
 });
 
-ProductSlug.displayName = 'ProductSlug';
+ProductSlug.displayName = "ProductSlug";
 
 /**
  * Raw component that provides direct access to the product data.
@@ -264,14 +265,14 @@ export const ProductRaw = React.forwardRef<
     <ProductPrimitive.Raw
       {...props}
       ref={ref}
-      className={cn('block', props.className)}
+      className={cn("block", props.className)}
     >
       {props.children}
     </ProductPrimitive.Raw>
   );
 });
 
-ProductRaw.displayName = 'ProductRaw';
+ProductRaw.displayName = "ProductRaw";
 
 /**
  * Container for product media gallery functionality.
@@ -306,7 +307,7 @@ export const ProductMediaGallery = React.forwardRef<
   );
 });
 
-ProductMediaGallery.displayName = 'ProductMediaGallery';
+ProductMediaGallery.displayName = "ProductMediaGallery";
 
 /**
  * Container for product variants (size, color, style, etc.).
@@ -348,14 +349,14 @@ export const ProductVariants = React.forwardRef<
     <ProductPrimitive.Variants
       {...props}
       ref={ref}
-      className={cn('space-y-4', props.className)}
+      className={cn("space-y-4", props.className)}
     >
       {props.children}
     </ProductPrimitive.Variants>
   );
 });
 
-ProductVariants.displayName = 'ProductVariants';
+ProductVariants.displayName = "ProductVariants";
 
 /**
  * Container for product modifiers (add-ons, customizations, etc.).
@@ -399,14 +400,14 @@ export const ProductModifiers = React.forwardRef<
     <ProductPrimitive.Modifiers
       {...props}
       ref={ref}
-      className={cn('space-y-4', props.className)}
+      className={cn("space-y-4", props.className)}
     >
       {props.children}
     </ProductPrimitive.Modifiers>
   );
 });
 
-ProductModifiers.displayName = 'ProductModifiers';
+ProductModifiers.displayName = "ProductModifiers";
 
 /**
  * Container for product variant option groups.
@@ -444,7 +445,7 @@ export const ProductVariantOptions = React.forwardRef<
   );
 });
 
-ProductVariantOptions.displayName = 'ProductVariantOptions';
+ProductVariantOptions.displayName = "ProductVariantOptions";
 
 /**
  * Repeater component that renders each variant option within a product.
@@ -477,7 +478,7 @@ ProductVariantOptions.displayName = 'ProductVariantOptions';
 export const ProductVariantOptionRepeater =
   ProductPrimitive.VariantOptionRepeater;
 
-ProductVariantOptionRepeater.displayName = 'ProductVariantOptionRepeater';
+ProductVariantOptionRepeater.displayName = "ProductVariantOptionRepeater";
 
 /**
  * Container for product modifier option groups.
@@ -519,12 +520,12 @@ export const ProductModifierOptions = React.forwardRef<
   );
 });
 
-ProductModifierOptions.displayName = 'ProductModifierOptions';
+ProductModifierOptions.displayName = "ProductModifierOptions";
 
 export const ProductModifierOptionRepeater =
   ProductPrimitive.ModifierOptionRepeater;
 
-ProductModifierOptionRepeater.displayName = 'ProductModifierOptionRepeater';
+ProductModifierOptionRepeater.displayName = "ProductModifierOptionRepeater";
 
 /**
  * Displays the product stock status with appropriate styling.
@@ -560,14 +561,14 @@ export const ProductStock = React.forwardRef<
       {...props}
       ref={ref}
       labels={{
-        inStock: 'In Stock',
-        limitedStock: 'Limited Stock',
-        outOfStock: 'Out of Stock',
+        inStock: "In Stock",
+        limitedStock: "Limited Stock",
+        outOfStock: "Out of Stock",
         ...props.labels,
       }}
       className={cn(
         'data-[state="out-of-stock"]:text-status-error data-[state="in-stock"]:text-status-success data-[state="limited-stock"]:text-status-success',
-        props.className
+        props.className,
       )}
       asChild
     >
@@ -576,7 +577,7 @@ export const ProductStock = React.forwardRef<
   );
 });
 
-ProductStock.displayName = 'ProductStock';
+ProductStock.displayName = "ProductStock";
 
 /**
  * Add to cart button with loading states and automatic cart integration.
@@ -602,7 +603,7 @@ ProductStock.displayName = 'ProductStock';
  * ```
  */
 
-const productActionBtnClass = 'flex-1 relative btn-primary';
+const productActionBtnClass = "flex-1 relative btn-primary";
 
 export const ProductActionAddToCart = React.forwardRef<
   React.ElementRef<typeof ProductPrimitive.ProductActionAddToCart>,
@@ -632,7 +633,7 @@ export const ProductActionAddToCart = React.forwardRef<
   );
 });
 
-ProductActionAddToCart.displayName = 'ProductActionAddToCart';
+ProductActionAddToCart.displayName = "ProductActionAddToCart";
 
 /**
  * Buy now button that redirects directly to checkout.
@@ -681,7 +682,7 @@ export const ProductActionBuyNow = React.forwardRef<
   );
 });
 
-ProductActionBuyNow.displayName = 'ProductActionBuyNow';
+ProductActionBuyNow.displayName = "ProductActionBuyNow";
 
 /**
  * Pre-order button for products not yet available.
@@ -730,32 +731,33 @@ export const ProductActionPreOrder = React.forwardRef<
   );
 });
 
-ProductActionPreOrder.displayName = 'ProductActionPreOrder';
+ProductActionPreOrder.displayName = "ProductActionPreOrder";
 
 // Quantity Components
-const productQuantityVariants = cva('', {
+const productQuantityVariants = cva("", {
   variants: {
     variant: {
-      default: '',
+      default: "",
       button:
-        'px-3 py-1 hover:bg-surface-primary disabled:opacity-50 disabled:cursor-not-allowed transition-colors',
+        "px-3 py-1 hover:bg-surface-primary disabled:opacity-50 disabled:cursor-not-allowed transition-colors",
       input:
-        'w-16 text-center py-1 border-x border-brand-light focus:outline-none focus:ring-2 focus:ring-brand-primary',
+        "w-16 text-center py-1 border-x border-brand-light focus:outline-none focus:ring-2 focus:ring-brand-primary",
     },
     size: {
-      default: '',
-      sm: 'text-sm',
-      lg: 'text-lg',
+      default: "",
+      sm: "text-sm",
+      lg: "text-lg",
     },
   },
   defaultVariants: {
-    variant: 'default',
-    size: 'default',
+    variant: "default",
+    size: "default",
   },
 });
 
 export interface ProductQuantityRootProps
-  extends React.ComponentPropsWithoutRef<typeof ProductPrimitive.Quantity.Root>,
+  extends
+    React.ComponentPropsWithoutRef<typeof ProductPrimitive.Quantity.Root>,
     VariantProps<typeof productQuantityVariants> {}
 
 /**
@@ -789,12 +791,11 @@ export const ProductQuantityRoot = React.forwardRef<
   );
 });
 
-ProductQuantityRoot.displayName = 'ProductQuantityRoot';
+ProductQuantityRoot.displayName = "ProductQuantityRoot";
 
 export interface ProductQuantityDecrementProps
-  extends React.ComponentPropsWithoutRef<
-      typeof ProductPrimitive.Quantity.Decrement
-    >,
+  extends
+    React.ComponentPropsWithoutRef<typeof ProductPrimitive.Quantity.Decrement>,
     VariantProps<typeof productQuantityVariants> {}
 
 /**
@@ -826,12 +827,11 @@ export const ProductQuantityDecrement = React.forwardRef<
   );
 });
 
-ProductQuantityDecrement.displayName = 'ProductQuantityDecrement';
+ProductQuantityDecrement.displayName = "ProductQuantityDecrement";
 
 export interface ProductQuantityInputProps
-  extends React.ComponentPropsWithoutRef<
-      typeof ProductPrimitive.Quantity.Input
-    >,
+  extends
+    React.ComponentPropsWithoutRef<typeof ProductPrimitive.Quantity.Input>,
     VariantProps<typeof productQuantityVariants> {}
 
 /**
@@ -861,12 +861,11 @@ export const ProductQuantityInput = React.forwardRef<
   );
 });
 
-ProductQuantityInput.displayName = 'ProductQuantityInput';
+ProductQuantityInput.displayName = "ProductQuantityInput";
 
 export interface ProductQuantityIncrementProps
-  extends React.ComponentPropsWithoutRef<
-      typeof ProductPrimitive.Quantity.Increment
-    >,
+  extends
+    React.ComponentPropsWithoutRef<typeof ProductPrimitive.Quantity.Increment>,
     VariantProps<typeof productQuantityVariants> {}
 
 /**
@@ -898,7 +897,7 @@ export const ProductQuantityIncrement = React.forwardRef<
   );
 });
 
-ProductQuantityIncrement.displayName = 'ProductQuantityIncrement';
+ProductQuantityIncrement.displayName = "ProductQuantityIncrement";
 
 /**
  * Raw component that provides direct access to quantity data.
@@ -931,14 +930,14 @@ export const ProductQuantityRaw = React.forwardRef<
     <ProductPrimitive.Quantity.Raw
       {...props}
       ref={ref}
-      className={cn('block', props.className)}
+      className={cn("block", props.className)}
     >
       {props.children}
     </ProductPrimitive.Quantity.Raw>
   );
 });
 
-ProductQuantityRaw.displayName = 'ProductQuantityRaw';
+ProductQuantityRaw.displayName = "ProductQuantityRaw";
 
 /**
  * Displays the selected product variant SKU (Stock Keeping Unit).
@@ -979,7 +978,7 @@ export const ProductVariantSKU = React.forwardRef<
   );
 });
 
-ProductVariantSKU.displayName = 'ProductVariantSKU';
+ProductVariantSKU.displayName = "ProductVariantSKU";
 
 /**
  * Displays the selected product variant weight.
@@ -1020,7 +1019,7 @@ export const ProductVariantWeight = React.forwardRef<
   );
 });
 
-ProductVariantWeight.displayName = 'ProductVariantWeight';
+ProductVariantWeight.displayName = "ProductVariantWeight";
 
 /**
  * Displays the selected product variant stock status.
@@ -1067,7 +1066,7 @@ export const ProductVariantStock = React.forwardRef<
       ref={ref}
       className={cn(
         'text-sm data-[state="out-of-stock"]:text-status-error data-[state="in-stock"]:text-status-success data-[state="limited-stock"]:text-status-success data-[state="can-pre-order"]:text-status-success',
-        props.className
+        props.className,
       )}
       asChild
     >
@@ -1079,9 +1078,9 @@ export const ProductVariantStock = React.forwardRef<
           >
             <span
               className={`h-3 w-3 inline-block rounded-full ${
-                props.status === 'out-of-stock'
-                  ? 'status-dot-danger'
-                  : 'status-dot-success'
+                props.status === "out-of-stock"
+                  ? "status-dot-danger"
+                  : "status-dot-success"
               }`}
             />
             {props.label}
@@ -1092,7 +1091,7 @@ export const ProductVariantStock = React.forwardRef<
   );
 });
 
-ProductVariantStock.displayName = 'ProductVariantStock';
+ProductVariantStock.displayName = "ProductVariantStock";
 
 /**
  * Reset button for product variant selections.
@@ -1133,8 +1132,8 @@ export const ProductVariantSelectorReset = React.forwardRef<
       {...props}
       ref={ref}
       className={cn(
-        'text-sm text-brand-primary hover:text-brand-light transition-colors',
-        props.className
+        "text-sm text-brand-primary hover:text-brand-light transition-colors",
+        props.className,
       )}
     >
       {props.children}
@@ -1142,7 +1141,7 @@ export const ProductVariantSelectorReset = React.forwardRef<
   );
 });
 
-ProductVariantSelectorReset.displayName = 'ProductVariantSelectorReset';
+ProductVariantSelectorReset.displayName = "ProductVariantSelectorReset";
 
 /**
  * Displays the product ribbon/badge.
@@ -1175,7 +1174,7 @@ export const ProductRibbon = React.forwardRef<
     <ProductPrimitive.Ribbon
       {...props}
       ref={ref}
-      className={cn('absolute top-2 z-10 px-3 py-1 left-2', props.className)}
+      className={cn("absolute top-2 z-10 px-3 py-1 left-2", props.className)}
       asChild
     >
       <Badge variant="secondary" data-item-field="ribbon.name" />
@@ -1183,4 +1182,4 @@ export const ProductRibbon = React.forwardRef<
   );
 });
 
-ProductRibbon.displayName = 'ProductRibbon';
+ProductRibbon.displayName = "ProductRibbon";

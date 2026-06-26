@@ -1,12 +1,12 @@
-import { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { BaseCrudService } from '@/integrations';
-import { CatalogItems } from '@/entities';
-import { LoadingSpinner } from '@/components/ui/loading-spinner';
-import { Image } from '@/components/ui/image';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import { useEffect, useState } from "react";
+import { useParams, Link } from "react-router-dom";
+import { BaseCrudService } from "@/integrations";
+import { CatalogItems } from "@/entities";
+import { LoadingSpinner } from "@/components/ui/loading-spinner";
+import { Image } from "@/components/ui/image";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export default function ItemDetailsPage() {
   const { id } = useParams<{ id: string }>();
@@ -26,8 +26,11 @@ export default function ItemDetailsPage() {
       setIsLoading(true);
       setNotFound(false);
 
-      const data = await BaseCrudService.getById<CatalogItems>('catalogitems', id!);
-      
+      const data = await BaseCrudService.getById<CatalogItems>(
+        "catalogitems",
+        id!,
+      );
+
       if (!data) {
         setNotFound(true);
         return;
@@ -37,14 +40,20 @@ export default function ItemDetailsPage() {
 
       // Load related items from same category
       if (data.category) {
-        const result = await BaseCrudService.getAll<CatalogItems>('catalogitems', {}, { limit: 3 });
+        const result = await BaseCrudService.getAll<CatalogItems>(
+          "catalogitems",
+          {},
+          { limit: 3 },
+        );
         const related = result.items.filter(
-          relatedItem => relatedItem.category === data.category && relatedItem._id !== data._id
+          (relatedItem) =>
+            relatedItem.category === data.category &&
+            relatedItem._id !== data._id,
         );
         setRelatedItems(related);
       }
     } catch (error) {
-      console.error('Failed to load item:', error);
+      console.error("Failed to load item:", error);
       setNotFound(true);
     } finally {
       setIsLoading(false);
@@ -95,7 +104,10 @@ export default function ItemDetailsPage() {
               Home
             </Link>
             <span>/</span>
-            <Link to="/catalog" className="hover:text-primary transition-colors">
+            <Link
+              to="/catalog"
+              className="hover:text-primary transition-colors"
+            >
               Catalog
             </Link>
             <span>/</span>
@@ -111,8 +123,11 @@ export default function ItemDetailsPage() {
             {/* Image */}
             <div className="relative aspect-[4/3] lg:aspect-square">
               <Image
-                src={item.mainImage || 'https://static.wixstatic.com/media/48031e_1668a2d467984d2daa6d42715ee5b035~mv2.png?originWidth=768&originHeight=576'}
-                alt={item.itemName || 'Item image'}
+                src={
+                  item.mainImage ||
+                  "https://static.wixstatic.com/media/48031e_1668a2d467984d2daa6d42715ee5b035~mv2.png?originWidth=768&originHeight=576"
+                }
+                alt={item.itemName || "Item image"}
                 className="w-full h-full object-cover"
                 width={800}
               />
@@ -150,11 +165,14 @@ export default function ItemDetailsPage() {
                         Added
                       </p>
                       <p className="font-paragraph text-base text-foreground">
-                        {new Date(item._createdDate).toLocaleDateString('en-US', {
-                          year: 'numeric',
-                          month: 'long',
-                          day: 'numeric',
-                        })}
+                        {new Date(item._createdDate).toLocaleDateString(
+                          "en-US",
+                          {
+                            year: "numeric",
+                            month: "long",
+                            day: "numeric",
+                          },
+                        )}
                       </p>
                     </div>
                   )}
@@ -199,8 +217,11 @@ export default function ItemDetailsPage() {
                   >
                     <div className="aspect-[4/3] overflow-hidden">
                       <Image
-                        src={relatedItem.mainImage || 'https://static.wixstatic.com/media/48031e_295879a37ff24eb59d1cd24c129ab33b~mv2.png?originWidth=576&originHeight=448'}
-                        alt={relatedItem.itemName || 'Related item'}
+                        src={
+                          relatedItem.mainImage ||
+                          "https://static.wixstatic.com/media/48031e_295879a37ff24eb59d1cd24c129ab33b~mv2.png?originWidth=576&originHeight=448"
+                        }
+                        alt={relatedItem.itemName || "Related item"}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         width={600}
                       />

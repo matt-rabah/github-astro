@@ -116,51 +116,57 @@ export class ErrorOverlay {
         type: EditorEventMessages.CLIENT_ERROR,
         clientErrorData: {
           errorType: type,
-          message: err?.message || 'Unknown error',
-          stack: err?.stack || 'No stack trace available',
-        }
+          message: err?.message || "Unknown error",
+          stack: err?.stack || "No stack trace available",
+        },
       });
     } catch (error) {
-      console.warn('Failed to send error to parent via framewire:', error?.message);
+      console.warn(
+        "Failed to send error to parent via framewire:",
+        error?.message,
+      );
     }
   }
 
-	constructor(err) {
-		console.log('ErrorPage-style overlay constructor called with:', err);
+  constructor(err) {
+    console.log("ErrorPage-style overlay constructor called with:", err);
 
     // Call editor frame with the error (via post message)
-    ErrorOverlay.sendErrorToParent(err, 'build');
+    ErrorOverlay.sendErrorToParent(err, "build");
 
     // Create the overlay element using HTML template
-		const overlay = document.createElement('div');
-		overlay.innerHTML = ErrorOverlay.getOverlayHTML();
+    const overlay = document.createElement("div");
+    overlay.innerHTML = ErrorOverlay.getOverlayHTML();
 
-		// Add to DOM
-		document.body.appendChild(overlay);
-	}
+    // Add to DOM
+    document.body.appendChild(overlay);
+  }
 }
 
 function getOverlayCode() {
-	return `
+  return `
 		${ErrorOverlay.toString()}
 	`;
 }
 
 function patchOverlay(code) {
-  return code.replace('class ErrorOverlay', getOverlayCode() + '\nclass OldErrorOverlay');
+  return code.replace(
+    "class ErrorOverlay",
+    getOverlayCode() + "\nclass OldErrorOverlay",
+  );
 }
 
 // See https://github.com/withastro/astro/blob/main/packages/astro/src/vite-plugin-astro-server/plugin.ts#L157
 export default function customErrorOverlayPlugin() {
-	return {
-		name: 'custom-error-overlay',
-		transform(code, id, opts = {}) {
-			if (opts?.ssr) return;
+  return {
+    name: "custom-error-overlay",
+    transform(code, id, opts = {}) {
+      if (opts?.ssr) return;
 
-			if (!id.includes('vite/dist/client/client.mjs')) return;
+      if (!id.includes("vite/dist/client/client.mjs")) return;
 
-			// Replace the Vite overlay with ours
-			return patchOverlay(code);
-		},
-	};
+      // Replace the Vite overlay with ours
+      return patchOverlay(code);
+    },
+  };
 }

@@ -6,25 +6,25 @@ import {
   type StaticHandlerContext,
   createStaticRouter,
   StaticRouterProvider,
-} from 'react-router';
-import { useMemo } from 'react';
+} from "react-router";
+import { useMemo } from "react";
 
 // Import route components and loaders
-import { MiniCart, rootRouteLoader, WixServicesProvider } from './routes/root';
+import { MiniCart, rootRouteLoader, WixServicesProvider } from "./routes/root";
 import {
   ProductDetailsRoute,
   productRouteLoader,
-} from './routes/product-details';
+} from "./routes/product-details";
 import {
   StoreCollectionRoute,
   storeCollectionRouteLoader,
-} from './routes/store-collection';
-import { defaultStoreCollectionRouteRedirectLoader } from './routes/store-redirect';
-import { Cart } from './routes/cart';
+} from "./routes/store-collection";
+import { defaultStoreCollectionRouteRedirectLoader } from "./routes/store-redirect";
+import { Cart } from "./routes/cart";
 
 export const routes = [
   {
-    path: '/',
+    path: "/",
     element: <Navigate to="/store" />,
   },
   {
@@ -40,37 +40,37 @@ export const routes = [
     loader: rootRouteLoader,
     children: [
       {
-        path: '/products/:slug',
+        path: "/products/:slug",
         element: <ProductDetailsRoute />,
         loader: productRouteLoader,
         routeMetadata: {
           appDefId: "1380b703-ce81-ff05-f115-39571d94dfcd",
           pageIdentifier: "wix.stores.sub_pages.product",
           identifiers: {
-            slug: "STORES.PRODUCT.SLUG"
-          }
+            slug: "STORES.PRODUCT.SLUG",
+          },
         },
       },
       {
-        path: '/store',
+        path: "/store",
         element: <></>,
         loader: defaultStoreCollectionRouteRedirectLoader,
         index: true,
       },
       {
-        path: '/store/:categorySlug',
+        path: "/store/:categorySlug",
         element: <StoreCollectionRoute productPageRoute="/products" />,
         loader: storeCollectionRouteLoader,
         routeMetadata: {
           appDefId: "1380b703-ce81-ff05-f115-39571d94dfcd",
           pageIdentifier: "wix.stores.sub_pages.category",
           identifiers: {
-            categorySlug: "STORES.CATEGORY.SLUG"
-          }
-        }
+            categorySlug: "STORES.CATEGORY.SLUG",
+          },
+        },
       },
       {
-        path: '/cart',
+        path: "/cart",
         element: <Cart />,
       },
     ],
@@ -85,7 +85,7 @@ export default function ReactRouterApp({
   basename: string;
 }) {
   // Check if we're running on server at runtime, not build time
-  const isSSR = typeof window === 'undefined';
+  const isSSR = typeof window === "undefined";
 
   // Memoize router creation to prevent recreating on every render
   // This prevents hydration mismatches between SSR and CSR

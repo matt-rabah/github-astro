@@ -1,5 +1,5 @@
-import { ProductActionButtons } from './ProductActionButtons';
-import { CartSummary } from '@/components/ui/ecom/Cart';
+import { ProductActionButtons } from "./ProductActionButtons";
+import { CartSummary } from "@/components/ui/ecom/Cart";
 import {
   Product,
   ProductName,
@@ -21,25 +21,25 @@ import {
   ProductVariantWeight,
   ProductVariantSelectorReset,
   ProductVariantStock,
-} from '@/components/ui/store/Product';
+} from "@/components/ui/store/Product";
 import {
   OptionName,
   OptionChoices,
   OptionChoiceRepeater,
   OptionMandatoryIndicator,
-} from '@/components/ui/store/Option';
+} from "@/components/ui/store/Option";
 import {
   ChoiceColor,
   ChoiceText,
   ChoiceFreeText,
-} from '@/components/ui/store/Choice';
+} from "@/components/ui/store/Choice";
 
-import { productsV3 } from '@wix/stores';
+import { productsV3 } from "@wix/stores";
 
-import { SocialSharingButtons } from '../social/SocialSharingButtons';
-import { useNavigation } from '../NavigationContext';
+import { SocialSharingButtons } from "../social/SocialSharingButtons";
+import { useNavigation } from "../NavigationContext";
 
-import * as StyledMediaGallery from '@/components/ui/media/MediaGallery';
+import * as StyledMediaGallery from "@/components/ui/media/MediaGallery";
 
 export default function ProductDetails({
   isQuickView = false,
@@ -153,7 +153,7 @@ export default function ProductDetails({
 
               <ProductModifierOptions>
                 <ProductModifierOptionRepeater
-                  allowedTypes={['color', 'text', 'free-text']}
+                  allowedTypes={["color", "text", "free-text"]}
                 >
                   <div className="space-y-3 mb-4">
                     <div className="flex items-center gap-1">
@@ -221,10 +221,10 @@ export default function ProductDetails({
             <ProductActionButtons showBuyNow={true} />
             <ProductVariantStock
               labels={{
-                inStock: 'In Stock',
-                limitedStock: 'Limited Stock',
-                outOfStock: 'Out of Stock',
-                preOrder: 'Available for Pre-order',
+                inStock: "In Stock",
+                limitedStock: "Limited Stock",
+                outOfStock: "Out of Stock",
+                preOrder: "Available for Pre-order",
               }}
             />
           </div>
@@ -261,7 +261,7 @@ export default function ProductDetails({
                     </h3>
                     <div className="flex items-center justify-between">
                       <span className="text-content-secondary">
-                        {totalItems} item{totalItems !== 1 ? 's' : ''} in cart
+                        {totalItems} item{totalItems !== 1 ? "s" : ""} in cart
                       </span>
                       <span className="text-xl font-bold text-content-primary">
                         {subtotal}

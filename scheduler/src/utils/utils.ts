@@ -5,7 +5,9 @@
 /**
  * Combines multiple class names into a single string, filtering out falsy values
  */
-export function cn(...classes: Array<string | boolean | undefined | null>): string {
+export function cn(
+  ...classes: Array<string | boolean | undefined | null>
+): string {
   return classes.filter(Boolean).join(" ");
 }
 

@@ -1,15 +1,15 @@
-import * as StyledMediaGallery from '@/components/ui/media/MediaGallery';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardFooter, CardTitle } from '@/components/ui/card';
-import { TooltipProvider } from '@/components/ui/tooltip';
-import { ProductList as ProductListPrimitive } from '@wix/stores/components';
+import * as StyledMediaGallery from "@/components/ui/media/MediaGallery";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardFooter, CardTitle } from "@/components/ui/card";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import { ProductList as ProductListPrimitive } from "@wix/stores/components";
 import {
   type CategoriesListServiceConfig,
   type ProductsListServiceConfig,
-} from '@wix/stores/services';
+} from "@wix/stores/services";
 
-import React from 'react';
-import { useNavigation } from '../NavigationContext';
+import React from "react";
+import { useNavigation } from "../NavigationContext";
 
 import {
   ProductCompareAtPrice,
@@ -24,24 +24,24 @@ import {
   ProductVariantOptions,
   ProductVariants,
   ProductVariantSelectorReset,
-} from '@/components/ui/store/Product';
+} from "@/components/ui/store/Product";
 import {
   ProductLoadMoreTrigger,
   ProductList,
   ProductRepeater,
   Products,
   ProductTotalsDisplayed,
-} from '@/components/ui/store/ProductList';
-import CategoryPicker from './CategoryPicker';
-import { ProductActionButtons } from './ProductActionButtons';
-import ProductFiltersSidebar from './ProductFiltersSidebar';
-import { SortDropdown } from './SortDropdown';
+} from "@/components/ui/store/ProductList";
+import CategoryPicker from "./CategoryPicker";
+import { ProductActionButtons } from "./ProductActionButtons";
+import ProductFiltersSidebar from "./ProductFiltersSidebar";
+import { SortDropdown } from "./SortDropdown";
 import {
   OptionChoiceRepeater,
   OptionChoices,
   OptionName,
-} from '@/components/ui/store/Option';
-import { ChoiceColor, ChoiceText } from '@/components/ui/store/Choice';
+} from "@/components/ui/store/Option";
+import { ChoiceColor, ChoiceText } from "@/components/ui/store/Choice";
 
 interface ProductListProps {
   productsListConfig: ProductsListServiceConfig;
@@ -158,7 +158,7 @@ export const ProductListWrapper: React.FC<ProductListProps> = ({
                             Clear Filters
                           </Button>
                         </div>
-                      )
+                      ),
                   )}
                 </ProductListPrimitive.FilterResetTrigger>
 
@@ -232,9 +232,9 @@ export const ProductListWrapper: React.FC<ProductListProps> = ({
                             <ProductStock
                               className="flex items-center gap-1 text-xs font-medium"
                               labels={{
-                                inStock: 'In Stock',
-                                limitedStock: 'In Stock',
-                                outOfStock: 'Out of Stock',
+                                inStock: "In Stock",
+                                limitedStock: "In Stock",
+                                outOfStock: "Out of Stock",
                               }}
                             />
                           </div>
@@ -314,7 +314,7 @@ export const ProductListWrapper: React.FC<ProductListProps> = ({
               </div>
               <ProductTotalsDisplayed
                 className="text-content-muted text-sm mt-4"
-                label={'{length} products loaded'}
+                label={"{length} products loaded"}
               />
             </div>
           </div>

@@ -30,7 +30,7 @@ export const server = {
                 id: item._id,
                 description: item.description,
               },
-            ])
+            ]),
           );
 
           mediaItems = listFiles.map((file) => {
@@ -71,7 +71,7 @@ export const server = {
           {
             fileName,
             parentFolderId: VISITOR_UPLOADS_FOLDER_ID,
-          }
+          },
         );
 
         return result;

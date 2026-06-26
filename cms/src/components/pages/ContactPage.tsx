@@ -1,14 +1,14 @@
-import { useState } from 'react';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import { useState } from "react";
+import { Mail, Phone, MapPin, Send } from "lucide-react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -17,12 +17,14 @@ export default function ContactPage() {
     // Simulate form submission
     setIsSubmitted(true);
     setTimeout(() => {
-      setFormData({ name: '', email: '', subject: '', message: '' });
+      setFormData({ name: "", email: "", subject: "", message: "" });
       setIsSubmitted(false);
     }, 3000);
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -43,7 +45,8 @@ export default function ContactPage() {
             Let's start a conversation
           </h1>
           <p className="font-paragraph text-lg md:text-xl max-w-3xl leading-relaxed opacity-95">
-            We're here to answer your questions, discuss your needs, and explore how we can work together.
+            We're here to answer your questions, discuss your needs, and explore
+            how we can work together.
           </p>
         </div>
       </section>
@@ -58,7 +61,8 @@ export default function ContactPage() {
                 Contact Information
               </h2>
               <p className="font-paragraph text-lg text-foreground opacity-80 leading-relaxed mb-12">
-                Reach out to us through any of the following channels. We're available to assist you and look forward to hearing from you.
+                Reach out to us through any of the following channels. We're
+                available to assist you and look forward to hearing from you.
               </p>
 
               <div className="space-y-8">
@@ -67,7 +71,9 @@ export default function ContactPage() {
                     <Mail className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-heading text-xl text-foreground mb-2">Email</h3>
+                    <h3 className="font-heading text-xl text-foreground mb-2">
+                      Email
+                    </h3>
                     <p className="font-paragraph text-base text-foreground opacity-80">
                       info@example.com
                     </p>
@@ -82,7 +88,9 @@ export default function ContactPage() {
                     <Phone className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-heading text-xl text-foreground mb-2">Phone</h3>
+                    <h3 className="font-heading text-xl text-foreground mb-2">
+                      Phone
+                    </h3>
                     <p className="font-paragraph text-base text-foreground opacity-80">
                       +1 (555) 123-4567
                     </p>
@@ -97,7 +105,9 @@ export default function ContactPage() {
                     <MapPin className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-heading text-xl text-foreground mb-2">Address</h3>
+                    <h3 className="font-heading text-xl text-foreground mb-2">
+                      Address
+                    </h3>
                     <p className="font-paragraph text-base text-foreground opacity-80">
                       123 Main Street
                     </p>
@@ -146,13 +156,17 @@ export default function ContactPage() {
                     Thank You!
                   </h3>
                   <p className="font-paragraph text-base text-secondary-foreground opacity-80">
-                    Your message has been sent successfully. We'll get back to you soon.
+                    Your message has been sent successfully. We'll get back to
+                    you soon.
                   </p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <label htmlFor="name" className="block font-paragraph text-base text-foreground mb-2">
+                    <label
+                      htmlFor="name"
+                      className="block font-paragraph text-base text-foreground mb-2"
+                    >
                       Name *
                     </label>
                     <input
@@ -167,7 +181,10 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block font-paragraph text-base text-foreground mb-2">
+                    <label
+                      htmlFor="email"
+                      className="block font-paragraph text-base text-foreground mb-2"
+                    >
                       Email *
                     </label>
                     <input
@@ -182,7 +199,10 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label htmlFor="subject" className="block font-paragraph text-base text-foreground mb-2">
+                    <label
+                      htmlFor="subject"
+                      className="block font-paragraph text-base text-foreground mb-2"
+                    >
                       Subject *
                     </label>
                     <input
@@ -197,7 +217,10 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block font-paragraph text-base text-foreground mb-2">
+                    <label
+                      htmlFor="message"
+                      className="block font-paragraph text-base text-foreground mb-2"
+                    >
                       Message *
                     </label>
                     <textarea

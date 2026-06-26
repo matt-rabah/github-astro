@@ -1,4 +1,4 @@
-import StoreRouter, { routes } from './store-router';
+import StoreRouter, { routes } from "./store-router";
 
 export { routes };
 

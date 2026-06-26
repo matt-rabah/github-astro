@@ -1,18 +1,18 @@
-import React from 'react';
-import { MediaGallery as MediaGalleryPrimitive } from '@wix/media/components';
-import { cn } from '@/lib/utils';
+import React from "react";
+import { MediaGallery as MediaGalleryPrimitive } from "@wix/media/components";
+import { cn } from "@/lib/utils";
 
 export const Root: React.FC<
   React.ComponentProps<typeof MediaGalleryPrimitive.Root>
-> = props => <MediaGalleryPrimitive.Root {...props} />;
+> = (props) => <MediaGalleryPrimitive.Root {...props} />;
 
 export const Viewport: React.FC<
   React.ComponentProps<typeof MediaGalleryPrimitive.Viewport>
 > = ({ className, ...props }) => (
   <MediaGalleryPrimitive.Viewport
     className={cn(
-      'w-full h-full flex items-center justify-center [&>img]:max-w-full [&>img]:max-h-full [&>img]:object-contain',
-      className
+      "w-full h-full flex items-center justify-center [&>img]:max-w-full [&>img]:max-h-full [&>img]:object-contain",
+      className,
     )}
     emptyState={
       <div className="w-full h-full flex items-center justify-center">
@@ -40,8 +40,8 @@ export const Indicator: React.FC<
 > = ({ className, ...props }) => (
   <MediaGalleryPrimitive.Indicator
     className={cn(
-      'absolute bottom-4 right-4 bg-surface-tooltip text-nav px-3 py-1 rounded-full text-sm',
-      className
+      "absolute bottom-4 right-4 bg-surface-tooltip text-nav px-3 py-1 rounded-full text-sm",
+      className,
     )}
     {...props}
   />
@@ -52,8 +52,8 @@ export const Previous: React.FC<
 > = ({ className, ...props }) => (
   <MediaGalleryPrimitive.Previous
     className={cn(
-      'absolute left-4 top-1/2 -translate-y-1/2 btn-nav p-2 rounded-full transition-all',
-      className
+      "absolute left-4 top-1/2 -translate-y-1/2 btn-nav p-2 rounded-full transition-all",
+      className,
     )}
     {...props}
   >
@@ -78,8 +78,8 @@ export const Next: React.FC<
 > = ({ className, ...props }) => (
   <MediaGalleryPrimitive.Next
     className={cn(
-      'absolute right-4 top-1/2 -translate-y-1/2 btn-nav p-2 rounded-full transition-all',
-      className
+      "absolute right-4 top-1/2 -translate-y-1/2 btn-nav p-2 rounded-full transition-all",
+      className,
     )}
     {...props}
   >
@@ -122,8 +122,8 @@ export const ThumbnailItem: React.FC<
 > = ({ className, ...props }) => (
   <MediaGalleryPrimitive.ThumbnailItem
     className={cn(
-      'aspect-square bg-surface-primary rounded-lg border cursor-pointer transition-all data-[active=true]:border-brand-medium data-[active=true]:ring-2 data-[active=true]:ring-brand-light data-[active=false]:border-brand-subtle data-[active=false]:hover:border-brand-light',
-      className
+      "aspect-square bg-surface-primary rounded-lg border cursor-pointer transition-all data-[active=true]:border-brand-medium data-[active=true]:ring-2 data-[active=true]:ring-brand-light data-[active=false]:border-brand-subtle data-[active=false]:hover:border-brand-light",
+      className,
     )}
     emptyState={
       <div className="w-full h-full flex items-center justify-center">

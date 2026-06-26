@@ -1,12 +1,12 @@
-import { productsV3 } from '@wix/stores';
+import { productsV3 } from "@wix/stores";
 
 /**
  * Enum for display stock status messages
  */
 export enum StockStatusMessage {
-  IN_STOCK = 'In Stock',
-  AVAILABLE_FOR_PREORDER = 'Available for Pre-Order',
-  OUT_OF_STOCK = 'Out of Stock',
+  IN_STOCK = "In Stock",
+  AVAILABLE_FOR_PREORDER = "Available for Pre-Order",
+  OUT_OF_STOCK = "Out of Stock",
 }
 
 /**
@@ -18,7 +18,7 @@ export function getStockStatusMessage(
     | productsV3.AvailabilityStatus
     | string
     | undefined,
-  isPreOrderEnabled: boolean = false
+  isPreOrderEnabled: boolean = false,
 ): StockStatusMessage {
   if (isPreOrderEnabled) {
     return StockStatusMessage.AVAILABLE_FOR_PREORDER;

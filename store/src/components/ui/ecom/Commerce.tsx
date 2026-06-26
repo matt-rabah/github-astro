@@ -1,7 +1,7 @@
-import React from 'react';
-import { cva, type VariantProps } from 'class-variance-authority';
-import { cn } from '@/lib/utils';
-import { Commerce as CommercePrimitive } from '@wix/ecom/components';
+import React from "react";
+import { cva, type VariantProps } from "class-variance-authority";
+import { cn } from "@/lib/utils";
+import { Commerce as CommercePrimitive } from "@wix/ecom/components";
 
 /**
  * Root commerce provider that enables e-commerce functionality.
@@ -26,43 +26,42 @@ export const Commerce = CommercePrimitive;
 
 // Commerce Actions Checkout Component
 const commerceCheckoutVariants = cva(
-  'font-bold transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed',
+  "font-bold transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed",
   {
     variants: {
       variant: {
-        default: 'btn-primary text-content-primary',
-        primary: 'btn-primary text-content-primary',
+        default: "btn-primary text-content-primary",
+        primary: "btn-primary text-content-primary",
         secondary:
-          'bg-surface-secondary text-content-primary hover:bg-surface-secondary/90',
+          "bg-surface-secondary text-content-primary hover:bg-surface-secondary/90",
       },
       size: {
-        default: 'py-4 px-6 rounded-xl',
-        sm: 'py-2 px-4 rounded-lg text-sm',
-        lg: 'py-4 px-6 rounded-xl text-lg',
-        xl: 'py-6 px-8 rounded-2xl text-xl',
+        default: "py-4 px-6 rounded-xl",
+        sm: "py-2 px-4 rounded-lg text-sm",
+        lg: "py-4 px-6 rounded-xl text-lg",
+        xl: "py-6 px-8 rounded-2xl text-xl",
       },
       width: {
-        default: '',
-        full: 'w-full',
+        default: "",
+        full: "w-full",
       },
       animation: {
-        default: '',
-        scale: 'transform hover:scale-105',
+        default: "",
+        scale: "transform hover:scale-105",
       },
     },
     defaultVariants: {
-      variant: 'primary',
-      size: 'default',
-      width: 'full',
-      animation: 'scale',
+      variant: "primary",
+      size: "default",
+      width: "full",
+      animation: "scale",
     },
-  }
+  },
 );
 
 export interface CommerceCheckoutProps
-  extends React.ComponentPropsWithoutRef<
-      typeof CommercePrimitive.Actions.Checkout
-    >,
+  extends
+    React.ComponentPropsWithoutRef<typeof CommercePrimitive.Actions.Checkout>,
     VariantProps<typeof commerceCheckoutVariants> {}
 
 /**
@@ -101,7 +100,7 @@ export const CommerceActionsCheckout = React.forwardRef<
       ref={ref}
       className={cn(
         commerceCheckoutVariants({ variant, size, width, animation }),
-        className
+        className,
       )}
     >
       {props.children}
@@ -109,7 +108,7 @@ export const CommerceActionsCheckout = React.forwardRef<
   );
 });
 
-CommerceActionsCheckout.displayName = 'CommerceActionsCheckout';
+CommerceActionsCheckout.displayName = "CommerceActionsCheckout";
 
 // Commerce Actions namespace for better organization
 export const CommerceActions = {

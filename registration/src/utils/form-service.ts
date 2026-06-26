@@ -8,7 +8,7 @@ type SubmissionResult = {
 };
 
 export async function submitTournamentRegistration(
-  formData: Record<string, string>
+  formData: Record<string, string>,
 ): Promise<SubmissionResult> {
   try {
     const requiredFields = [

@@ -1,5 +1,5 @@
 ---
-import { items } from "@wix/data";
+import { items } from '@wix/data';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Content from '~/components/widgets/Content.astro';
 import Features2 from '~/components/widgets/Features2.astro';
@@ -7,14 +7,13 @@ import Hero from '~/components/widgets/Hero.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
-const { items: [servicesData] } = await items
-  .query('ServicesPage')
-  .find();
+const {
+  items: [servicesData],
+} = await items.query('ServicesPage').find();
 
 const metadata = {
   title: 'Services',
 };
-
 ---
 
 <Layout metadata={metadata}>
@@ -24,8 +23,7 @@ const metadata = {
     tagline={servicesData.heroTagline}
     title={servicesData.heroTitle}
     subtitle={servicesData.heroSubtitle}
-    actions={[{ variant: 'primary', target: '_blank', text: servicesData.heroActionButtonText
-, href: '/' }]}
+    actions={[{ variant: 'primary', target: '_blank', text: servicesData.heroActionButtonText, href: '/' }]}
     image={{
       src: servicesData.heroImage,
       alt: servicesData.heroImageAlt,
@@ -41,20 +39,17 @@ const metadata = {
     items={[
       {
         title: servicesData.featuresFirstItemTitle,
-        description:
-          servicesData.featuresFirstItemDescription,
+        description: servicesData.featuresFirstItemDescription,
         icon: servicesData.featuresFirstItemIcon,
       },
       {
         title: servicesData.featuresSecondItemTitle,
-        description:
-          servicesData.featuresSecondItemDescription,
+        description: servicesData.featuresSecondItemDescription,
         icon: servicesData.featuresSecondItemIcon,
       },
       {
         title: servicesData.featuresThirdItemTitle,
-        description:
-          servicesData.featuresThirdItemDescription,
+        description: servicesData.featuresThirdItemDescription,
         icon: servicesData.featuresThirdItemIcon,
       },
       {
@@ -102,20 +97,17 @@ const metadata = {
     items={[
       {
         title: servicesData.mainFeaturesFirstItemTitle,
-        description:
-          servicesData.mainFeaturesFirstItemDescription,
+        description: servicesData.mainFeaturesFirstItemDescription,
         icon: servicesData.mainFeaturesFirstItemIcon,
       },
       {
         title: servicesData.mainFeaturesSecondItemTitle,
-        description:
-          servicesData.mainFeaturesSecondItemDescription,
+        description: servicesData.mainFeaturesSecondItemDescription,
         icon: servicesData.mainFeaturesSecondItemIcon,
       },
       {
         title: servicesData.mainFeaturesThirdItemTitle,
-        description:
-          servicesData.mainFeaturesThirdItemDescription,
+        description: servicesData.mainFeaturesThirdItemDescription,
         icon: servicesData.mainFeaturesThirdItemIcon,
       },
       {
@@ -131,7 +123,9 @@ const metadata = {
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">{servicesData.mainFeaturesTitle}</h3>
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        {servicesData.mainFeaturesTitle}
+      </h3>
     </Fragment>
   </Content>
 
@@ -142,20 +136,17 @@ const metadata = {
     items={[
       {
         title: servicesData.benefitsFirstItemTitle,
-        description:
-          servicesData.benefitsFirstItemDescription,
+        description: servicesData.benefitsFirstItemDescription,
         icon: servicesData.benefitsFirstItemIcon,
       },
       {
         title: servicesData.benefitsSecondItemTitle,
-        description:
-          servicesData.benefitsSecondItemDescription,
+        description: servicesData.benefitsSecondItemDescription,
         icon: servicesData.benefitsSecondItemIcon,
       },
       {
         title: servicesData.benefitsThirdItemTitle,
-        description:
-          servicesData.benefitsThirdItemDescription,
+        description: servicesData.benefitsThirdItemDescription,
         icon: servicesData.benefitsThirdItemIcon,
       },
       {
@@ -186,7 +177,7 @@ const metadata = {
         job: servicesData.testimonialsFirstItemJob,
         image: {
           src: servicesData.testimonialsFirstItemImage,
-          alt: servicesData.testimonialsFirstItemImageAlt
+          alt: servicesData.testimonialsFirstItemImageAlt,
         },
       },
       {
@@ -195,7 +186,7 @@ const metadata = {
         job: servicesData.testimonialsSecondItemJob,
         image: {
           src: servicesData.testimonialsSecondItemImage,
-          alt: servicesData.testimonialsSecondItemImageAlt
+          alt: servicesData.testimonialsSecondItemImageAlt,
         },
       },
       {
@@ -204,7 +195,7 @@ const metadata = {
         job: servicesData.testimonialsThirdItemJob,
         image: {
           src: servicesData.testimonialsThirdItemImage,
-          alt: servicesData.testimonialsThirdItemImageAlt
+          alt: servicesData.testimonialsThirdItemImageAlt,
         },
       },
     ]}

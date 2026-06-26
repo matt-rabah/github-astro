@@ -1,6 +1,6 @@
-import React from 'react';
-import { cn } from '@/lib/utils';
-import { Option as OptionPrimitive } from '@wix/stores/components';
+import React from "react";
+import { cn } from "@/lib/utils";
+import { Option as OptionPrimitive } from "@wix/stores/components";
 
 /**
  * Root component for product options (variants or modifiers).
@@ -50,8 +50,8 @@ export const OptionName = React.forwardRef<
       {...props}
       ref={ref}
       className={cn(
-        'text-md font-medium text-content-primary',
-        props.className
+        "text-md font-medium text-content-primary",
+        props.className,
       )}
     >
       {props.children}
@@ -59,7 +59,7 @@ export const OptionName = React.forwardRef<
   );
 });
 
-OptionName.displayName = 'OptionName';
+OptionName.displayName = "OptionName";
 
 /**
  * Indicator that shows when an option is mandatory/required.
@@ -93,14 +93,14 @@ export const OptionMandatoryIndicator = React.forwardRef<
     <OptionPrimitive.MandatoryIndicator
       {...props}
       ref={ref}
-      className={cn('text-status-error ml-1', props.className)}
+      className={cn("text-status-error ml-1", props.className)}
     >
       {props.children}
     </OptionPrimitive.MandatoryIndicator>
   );
 });
 
-OptionMandatoryIndicator.displayName = 'OptionMandatoryIndicator';
+OptionMandatoryIndicator.displayName = "OptionMandatoryIndicator";
 
 /**
  * Container for all choices within an option.
@@ -135,7 +135,7 @@ export const OptionChoices = React.forwardRef<
   );
 });
 
-OptionChoices.displayName = 'OptionChoices';
+OptionChoices.displayName = "OptionChoices";
 
 /**
  * Repeater component that renders each choice within an option.
@@ -155,4 +155,4 @@ OptionChoices.displayName = 'OptionChoices';
  */
 export const OptionChoiceRepeater = OptionPrimitive.ChoiceRepeater;
 
-OptionChoiceRepeater.displayName = 'OptionChoiceRepeater';
+OptionChoiceRepeater.displayName = "OptionChoiceRepeater";

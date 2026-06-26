@@ -1,6 +1,6 @@
-import { CategoryList, Category } from '@wix/stores/components';
-import type { CategoriesListServiceConfig } from '@wix/stores/services';
-import { Label } from '@/components/ui/label';
+import { CategoryList, Category } from "@wix/stores/components";
+import type { CategoriesListServiceConfig } from "@wix/stores/services";
+import { Label } from "@/components/ui/label";
 
 interface CategoryPickerProps {
   categoriesListConfig: CategoriesListServiceConfig;

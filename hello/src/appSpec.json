@@ -20,14 +20,8 @@
           "Approachable"
         ],
         "designStyle": {
-          "primaryStyle": [
-            "Minimalism",
-            "Modern"
-          ],
-          "supportingStyles": [
-            "Organic",
-            "Editorial"
-          ]
+          "primaryStyle": ["Minimalism", "Modern"],
+          "supportingStyles": ["Organic", "Editorial"]
         },
         "palette": {
           "colors": {
@@ -65,11 +59,7 @@
               "fontFamily": "work-sans-v2",
               "fontJustification": ""
             },
-            "headingsSimilarFonts": [
-              "rubik-v2",
-              "poppins-v2",
-              "raleway"
-            ],
+            "headingsSimilarFonts": ["rubik-v2", "poppins-v2", "raleway"],
             "headingsUsageGuide": "Use the heading font in bold weights for primary titles and section headers to establish hierarchy and focus. Pair with the paragraph font for contrast, ensuring ample spacing and line height for readability. Headings should use the 'primary' color for emphasis or 'primaryForeground' on colored backgrounds. Maintain consistent letter spacing and avoid overly tight kerning to preserve clarity.",
             "headingsAccessibilityNotes": "Headings in 'primary' color on 'background' or 'secondary' backgrounds meet WCAG AA contrast requirements. Use sufficient font size and weight to ensure legibility across devices."
           },
@@ -79,11 +69,7 @@
               "fontFamily": "work-sans-v2",
               "fontJustification": ""
             },
-            "paragraphsSimilarFonts": [
-              "open sans",
-              "nunito sans",
-              "raleway"
-            ],
+            "paragraphsSimilarFonts": ["open sans", "nunito sans", "raleway"],
             "paragraphsUsageGuide": "Use the paragraph font in regular or medium weights for body text, captions, and secondary information. Text color should primarily be 'primaryForeground' or 'secondaryForeground' depending on background. Maintain comfortable line height and letter spacing to enhance readability. Combine with headings to create a clear typographic hierarchy and balanced page flow.",
             "paragraphsAccessibilityNotes": "Body text in 'primaryForeground' on 'background' or 'secondary' backgrounds meets WCAG AA contrast standards. Ensure font sizes are not too small to maintain accessibility."
           },
@@ -238,14 +224,8 @@
           "balanced"
         ],
         "designStyle": {
-          "primaryStyle": [
-            "Minimalism",
-            "Modernism"
-          ],
-          "supportingStyles": [
-            "Bold Typography",
-            "Grid-Based Layout"
-          ]
+          "primaryStyle": ["Minimalism", "Modernism"],
+          "supportingStyles": ["Bold Typography", "Grid-Based Layout"]
         },
         "palette": {
           "colors": {
@@ -456,14 +436,8 @@
           "understated"
         ],
         "designStyle": {
-          "primaryStyle": [
-            "Minimalism",
-            "Modern"
-          ],
-          "supportingStyles": [
-            "Editorial",
-            "Luxury"
-          ]
+          "primaryStyle": ["Minimalism", "Modern"],
+          "supportingStyles": ["Editorial", "Luxury"]
         },
         "palette": {
           "colors": {
@@ -678,14 +652,8 @@
           "elegant"
         ],
         "designStyle": {
-          "primaryStyle": [
-            "Minimalism",
-            "Editorial"
-          ],
-          "supportingStyles": [
-            "Classic Elegance",
-            "Modern Luxury"
-          ]
+          "primaryStyle": ["Minimalism", "Editorial"],
+          "supportingStyles": ["Classic Elegance", "Modern Luxury"]
         },
         "palette": {
           "colors": {
@@ -893,14 +861,8 @@
       "Approachable"
     ],
     "designStyle": {
-      "primaryStyle": [
-        "Minimalism",
-        "Modern"
-      ],
-      "supportingStyles": [
-        "Organic",
-        "Editorial"
-      ]
+      "primaryStyle": ["Minimalism", "Modern"],
+      "supportingStyles": ["Organic", "Editorial"]
     },
     "toneOfVoice": "Calm, refined, and approachable with a professional and authentic personality that emphasizes natural beauty and premium quality.",
     "components": {
@@ -916,11 +878,7 @@
           "fontJustification": ""
         },
         "headingsUsageGuide": "Use the heading font in bold weights for primary titles and section headers to establish hierarchy and focus. Pair with the paragraph font for contrast, ensuring ample spacing and line height for readability. Headings should use the 'primary' color for emphasis or 'primaryForeground' on colored backgrounds. Maintain consistent letter spacing and avoid overly tight kerning to preserve clarity.",
-        "headingsSimilarFonts": [
-          "rubik-v2",
-          "poppins-v2",
-          "raleway"
-        ],
+        "headingsSimilarFonts": ["rubik-v2", "poppins-v2", "raleway"],
         "headingsAccessibilityNotes": "Headings in 'primary' color on 'background' or 'secondary' backgrounds meet WCAG AA contrast requirements. Use sufficient font size and weight to ensure legibility across devices."
       },
       "fontSizes": [
@@ -1023,11 +981,7 @@
           "fontJustification": ""
         },
         "paragraphsUsageGuide": "Use the paragraph font in regular or medium weights for body text, captions, and secondary information. Text color should primarily be 'primaryForeground' or 'secondaryForeground' depending on background. Maintain comfortable line height and letter spacing to enhance readability. Combine with headings to create a clear typographic hierarchy and balanced page flow.",
-        "paragraphsSimilarFonts": [
-          "open sans",
-          "nunito sans",
-          "raleway"
-        ],
+        "paragraphsSimilarFonts": ["open sans", "nunito sans", "raleway"],
         "paragraphsAccessibilityNotes": "Body text in 'primaryForeground' on 'background' or 'secondary' backgrounds meets WCAG AA contrast standards. Ensure font sizes are not too small to maintain accessibility."
       },
       "welcomeSectionTypography": {

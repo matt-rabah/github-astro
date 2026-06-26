@@ -60,11 +60,9 @@ export function dispatchTimeSlotSelected(slot: TimeSlot): void {
 export function dispatchSessionTypeChanged(type: "free" | "premium"): void {
   dispatchCustomEvent<SessionTypeChangedEvent>(
     EVENT_NAMES.SESSION_TYPE_CHANGED,
-    { type }
+    { type },
   );
 }
-
-
 
 /**
  * Register date selection event listener
@@ -76,14 +74,14 @@ export function onDateSelected(callback: (date: Date) => void): () => void {
 
   document.addEventListener(
     EVENT_NAMES.DATE_SELECTED,
-    handler as EventListener
+    handler as EventListener,
   );
 
   // Return cleanup function
   return () => {
     document.removeEventListener(
       EVENT_NAMES.DATE_SELECTED,
-      handler as EventListener
+      handler as EventListener,
     );
   };
 }
@@ -92,7 +90,7 @@ export function onDateSelected(callback: (date: Date) => void): () => void {
  * Register time slot selection event listener
  */
 export function onTimeSlotSelected(
-  callback: (slot: TimeSlot) => void
+  callback: (slot: TimeSlot) => void,
 ): () => void {
   const handler = (event: CustomEvent<TimeSlotSelectedEvent>) => {
     callback(event.detail.slot);
@@ -100,14 +98,14 @@ export function onTimeSlotSelected(
 
   document.addEventListener(
     EVENT_NAMES.TIME_SLOT_SELECTED,
-    handler as EventListener
+    handler as EventListener,
   );
 
   // Return cleanup function
   return () => {
     document.removeEventListener(
       EVENT_NAMES.TIME_SLOT_SELECTED,
-      handler as EventListener
+      handler as EventListener,
     );
   };
 }
@@ -116,7 +114,7 @@ export function onTimeSlotSelected(
  * Register session type change event listener
  */
 export function onSessionTypeChanged(
-  callback: (type: "free" | "premium") => void
+  callback: (type: "free" | "premium") => void,
 ): () => void {
   const handler = (event: CustomEvent<SessionTypeChangedEvent>) => {
     callback(event.detail.type);
@@ -124,14 +122,14 @@ export function onSessionTypeChanged(
 
   document.addEventListener(
     EVENT_NAMES.SESSION_TYPE_CHANGED,
-    handler as EventListener
+    handler as EventListener,
   );
 
   // Return cleanup function
   return () => {
     document.removeEventListener(
       EVENT_NAMES.SESSION_TYPE_CHANGED,
-      handler as EventListener
+      handler as EventListener,
     );
   };
 }

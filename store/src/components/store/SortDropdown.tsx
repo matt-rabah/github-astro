@@ -1,4 +1,4 @@
-import { StyledProductListSort } from '@/components/ui/store/Sort';
+import { StyledProductListSort } from "@/components/ui/store/Sort";
 
 export function SortDropdown() {
   return (

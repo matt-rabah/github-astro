@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Link } from "react-router-dom";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -12,7 +12,8 @@ export default function Footer() {
           <div>
             <h3 className="font-heading text-2xl mb-4">CMS Template</h3>
             <p className="font-paragraph text-base opacity-90 leading-relaxed">
-              A flexible, clean template designed for content-driven websites and data catalogs.
+              A flexible, clean template designed for content-driven websites
+              and data catalogs.
             </p>
           </div>
 
@@ -20,16 +21,28 @@ export default function Footer() {
           <div>
             <h4 className="font-heading text-lg mb-4">Quick Links</h4>
             <nav className="flex flex-col gap-3">
-              <Link to="/" className="font-paragraph text-base opacity-90 hover:opacity-100 transition-opacity">
+              <Link
+                to="/"
+                className="font-paragraph text-base opacity-90 hover:opacity-100 transition-opacity"
+              >
                 Home
               </Link>
-              <Link to="/catalog" className="font-paragraph text-base opacity-90 hover:opacity-100 transition-opacity">
+              <Link
+                to="/catalog"
+                className="font-paragraph text-base opacity-90 hover:opacity-100 transition-opacity"
+              >
                 Catalog
               </Link>
-              <Link to="/about" className="font-paragraph text-base opacity-90 hover:opacity-100 transition-opacity">
+              <Link
+                to="/about"
+                className="font-paragraph text-base opacity-90 hover:opacity-100 transition-opacity"
+              >
                 About
               </Link>
-              <Link to="/contact" className="font-paragraph text-base opacity-90 hover:opacity-100 transition-opacity">
+              <Link
+                to="/contact"
+                className="font-paragraph text-base opacity-90 hover:opacity-100 transition-opacity"
+              >
                 Contact
               </Link>
             </nav>
@@ -41,15 +54,21 @@ export default function Footer() {
             <div className="flex flex-col gap-3">
               <div className="flex items-start gap-3">
                 <Mail className="w-5 h-5 mt-0.5 flex-shrink-0" />
-                <span className="font-paragraph text-base opacity-90">info@example.com</span>
+                <span className="font-paragraph text-base opacity-90">
+                  info@example.com
+                </span>
               </div>
               <div className="flex items-start gap-3">
                 <Phone className="w-5 h-5 mt-0.5 flex-shrink-0" />
-                <span className="font-paragraph text-base opacity-90">+1 (555) 123-4567</span>
+                <span className="font-paragraph text-base opacity-90">
+                  +1 (555) 123-4567
+                </span>
               </div>
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 mt-0.5 flex-shrink-0" />
-                <span className="font-paragraph text-base opacity-90">123 Main Street, City, State 12345</span>
+                <span className="font-paragraph text-base opacity-90">
+                  123 Main Street, City, State 12345
+                </span>
               </div>
             </div>
           </div>
@@ -76,10 +95,16 @@ export default function Footer() {
               © {currentYear} CMS Template. All rights reserved.
             </p>
             <div className="flex gap-6">
-              <Link to="/about" className="font-paragraph text-sm opacity-80 hover:opacity-100 transition-opacity">
+              <Link
+                to="/about"
+                className="font-paragraph text-sm opacity-80 hover:opacity-100 transition-opacity"
+              >
                 Privacy Policy
               </Link>
-              <Link to="/about" className="font-paragraph text-sm opacity-80 hover:opacity-100 transition-opacity">
+              <Link
+                to="/about"
+                className="font-paragraph text-sm opacity-80 hover:opacity-100 transition-opacity"
+              >
                 Terms of Service
               </Link>
             </div>

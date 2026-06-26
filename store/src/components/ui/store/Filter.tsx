@@ -1,18 +1,18 @@
-import React from 'react';
-import { Filter as FilterPrimitive } from '@wix/headless-components/react';
-import { cn } from '@/lib/utils';
+import React from "react";
+import { Filter as FilterPrimitive } from "@wix/headless-components/react";
+import { cn } from "@/lib/utils";
 
 export const Root: React.FC<
   React.ComponentProps<typeof FilterPrimitive.Root>
-> = props => <FilterPrimitive.Root {...props} />;
+> = (props) => <FilterPrimitive.Root {...props} />;
 
 export const Filtered: React.FC<
   React.ComponentProps<typeof FilterPrimitive.Filtered>
 > = ({ className, children, ...props }) => (
   <FilterPrimitive.Filtered
     className={cn(
-      'bg-background border border-border rounded-lg p-4 mb-4',
-      className
+      "bg-background border border-border rounded-lg p-4 mb-4",
+      className,
     )}
     {...props}
   >
@@ -24,7 +24,7 @@ export const FilterOptions: React.FC<
   React.ComponentProps<typeof FilterPrimitive.FilterOptions>
 > = ({ className, children, ...props }) => (
   <FilterPrimitive.FilterOptions
-    className={cn('space-y-6', className)}
+    className={cn("space-y-6", className)}
     {...props}
   >
     {children}
@@ -35,7 +35,7 @@ export const FilterOptionRepeater: React.FC<
   React.ComponentProps<typeof FilterPrimitive.FilterOptionRepeater>
 > = ({ className, children, ...props }) => (
   <FilterPrimitive.FilterOptionRepeater
-    className={cn('space-y-6', className)}
+    className={cn("space-y-6", className)}
     {...props}
   >
     {children}
@@ -51,8 +51,8 @@ export const Action = {
     <FilterPrimitive.Action.Clear
       ref={ref}
       className={cn(
-        'text-sm text-muted-foreground hover:text-foreground transition-colors underline cursor-pointer disabled:text-muted-foreground disabled:no-underline disabled:cursor-not-allowed',
-        className
+        "text-sm text-muted-foreground hover:text-foreground transition-colors underline cursor-pointer disabled:text-muted-foreground disabled:no-underline disabled:cursor-not-allowed",
+        className,
       )}
       {...props}
     />
@@ -67,7 +67,7 @@ export const FilterOption = {
   >(({ className, children, ...props }, ref) => (
     <FilterPrimitive.FilterOption.Label
       ref={ref}
-      className={cn('text-foreground font-medium mb-3 block', className)}
+      className={cn("text-foreground font-medium mb-3 block", className)}
       {...props}
     >
       {children}
@@ -81,8 +81,8 @@ export const FilterOption = {
     <FilterPrimitive.FilterOption.SingleFilter
       ref={ref}
       className={cn(
-        'flex gap-2 [&_button]:px-3 [&_button]:py-2 [&_button]:rounded-md [&_button]:text-sm [&_button]:font-medium [&_button]:border [&_button]:transition-all [&_button]:cursor-pointer [&_button]:border-border [&_button]:bg-background [&_button]:text-foreground [&_button[data-state=on]]:bg-primary [&_button[data-state=on]]:text-primary-foreground [&_button[data-state=on]]:border-primary [&_button[data-state=off]:hover]:bg-muted',
-        className
+        "flex gap-2 [&_button]:px-3 [&_button]:py-2 [&_button]:rounded-md [&_button]:text-sm [&_button]:font-medium [&_button]:border [&_button]:transition-all [&_button]:cursor-pointer [&_button]:border-border [&_button]:bg-background [&_button]:text-foreground [&_button[data-state=on]]:bg-primary [&_button[data-state=on]]:text-primary-foreground [&_button[data-state=on]]:border-primary [&_button[data-state=off]:hover]:bg-muted",
+        className,
       )}
       {...props}
     />
@@ -130,7 +130,7 @@ flex flex-wrap gap-2 [&_button]:transition-all [&_button]:cursor-pointer [&_butt
     /* --- Show Tooltip on Hover --- */
     [&[data-display-type='color']_button:hover:after]:opacity-100
     [&[data-display-type='color']_button:hover:after]:visible`,
-        className
+        className,
       )}
       {...props}
     />
@@ -159,7 +159,7 @@ flex flex-wrap gap-2 [&_button]:transition-all [&_button]:cursor-pointer [&_butt
         /* Range labels */
         [&>div:last-child]:flex [&>div:last-child]:justify-between [&>div:last-child]:text-sm [&>div:last-child]:text-muted-foreground [&>div:last-child]:font-medium [&>div:last-child]:mt-2 
         `,
-        className
+        className,
       )}
       {...props}
     />
@@ -167,11 +167,11 @@ flex flex-wrap gap-2 [&_button]:transition-all [&_button]:cursor-pointer [&_butt
 };
 
 // Set display names
-Action.Clear.displayName = 'Filter.Action.Clear';
-FilterOption.Label.displayName = 'Filter.FilterOption.Label';
-FilterOption.SingleFilter.displayName = 'Filter.FilterOption.SingleFilter';
-FilterOption.MultiFilter.displayName = 'Filter.FilterOption.MultiFilter';
-FilterOption.RangeFilter.displayName = 'Filter.FilterOption.RangeFilter';
+Action.Clear.displayName = "Filter.Action.Clear";
+FilterOption.Label.displayName = "Filter.FilterOption.Label";
+FilterOption.SingleFilter.displayName = "Filter.FilterOption.SingleFilter";
+FilterOption.MultiFilter.displayName = "Filter.FilterOption.MultiFilter";
+FilterOption.RangeFilter.displayName = "Filter.FilterOption.RangeFilter";
 
 // Export default to support namespace imports
 export default {

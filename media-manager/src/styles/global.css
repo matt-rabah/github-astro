@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-
 :root {
   --accent: 136, 58, 234;
   --accent-light: 224, 204, 250;
@@ -11,4 +10,4 @@
     rgb(var(--accent-light)) 30%,
     white 60%
   );
-} 
+}

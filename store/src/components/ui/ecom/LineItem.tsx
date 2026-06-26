@@ -1,7 +1,7 @@
-import React from 'react';
-import { cva, type VariantProps } from 'class-variance-authority';
-import { cn } from '@/lib/utils';
-import { LineItem as LineItemPrimitive } from '@wix/ecom/components';
+import React from "react";
+import { cva, type VariantProps } from "class-variance-authority";
+import { cn } from "@/lib/utils";
+import { LineItem as LineItemPrimitive } from "@wix/ecom/components";
 
 /**
  * Root component for cart line items.
@@ -46,22 +46,23 @@ import { LineItem as LineItemPrimitive } from '@wix/ecom/components';
 export const LineItem = LineItemPrimitive.Root;
 
 // LineItem Image Component
-const lineItemImageVariants = cva('rounded-lg object-cover', {
+const lineItemImageVariants = cva("rounded-lg object-cover", {
   variants: {
     size: {
-      default: 'w-16 h-16',
-      sm: 'w-12 h-12',
-      lg: 'w-24 h-24',
-      xl: 'w-32 h-32',
+      default: "w-16 h-16",
+      sm: "w-12 h-12",
+      lg: "w-24 h-24",
+      xl: "w-32 h-32",
     },
   },
   defaultVariants: {
-    size: 'default',
+    size: "default",
   },
 });
 
 export interface LineItemImageProps
-  extends React.ComponentPropsWithoutRef<typeof LineItemPrimitive.Image>,
+  extends
+    React.ComponentPropsWithoutRef<typeof LineItemPrimitive.Image>,
     VariantProps<typeof lineItemImageVariants> {}
 
 /**
@@ -106,25 +107,26 @@ export const LineItemImage = React.forwardRef<
   );
 });
 
-LineItemImage.displayName = 'LineItemImage';
+LineItemImage.displayName = "LineItemImage";
 
 // LineItem Title Component
-const lineItemTitleVariants = cva('font-semibold text-content-primary', {
+const lineItemTitleVariants = cva("font-semibold text-content-primary", {
   variants: {
     size: {
-      default: 'text-lg',
-      sm: 'text-base',
-      lg: 'text-xl',
-      xl: 'text-2xl',
+      default: "text-lg",
+      sm: "text-base",
+      lg: "text-xl",
+      xl: "text-2xl",
     },
   },
   defaultVariants: {
-    size: 'default',
+    size: "default",
   },
 });
 
 export interface LineItemTitleProps
-  extends React.ComponentPropsWithoutRef<typeof LineItemPrimitive.Title>,
+  extends
+    React.ComponentPropsWithoutRef<typeof LineItemPrimitive.Title>,
     VariantProps<typeof lineItemTitleVariants> {}
 
 /**
@@ -168,7 +170,7 @@ export const LineItemTitle = React.forwardRef<
   );
 });
 
-LineItemTitle.displayName = 'LineItemTitle';
+LineItemTitle.displayName = "LineItemTitle";
 
 // LineItem SelectedOptions Component
 /**
@@ -205,7 +207,7 @@ export const LineItemSelectedOptions = React.forwardRef<
   );
 });
 
-LineItemSelectedOptions.displayName = 'LineItemSelectedOptions';
+LineItemSelectedOptions.displayName = "LineItemSelectedOptions";
 
 /**
  * Repeater component that renders each selected option for a line item.
@@ -228,7 +230,7 @@ LineItemSelectedOptions.displayName = 'LineItemSelectedOptions';
  */
 export const LineItemSelectedOptionRepeater =
   LineItemPrimitive.SelectedOptionRepeater;
-LineItemSelectedOptionRepeater.displayName = 'LineItemSelectedOptionRepeater';
+LineItemSelectedOptionRepeater.displayName = "LineItemSelectedOptionRepeater";
 
 /**
  * Container for line item quantity controls.
@@ -273,4 +275,4 @@ export const LineItemQuantity = React.forwardRef<
   );
 });
 
-LineItemQuantity.displayName = 'LineItemQuantity';
+LineItemQuantity.displayName = "LineItemQuantity";

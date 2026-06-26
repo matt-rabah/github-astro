@@ -4,7 +4,7 @@ export function getElement<T extends HTMLElement>(id: string): T | null {
 
 export function toggleElement(
   element: HTMLElement | null,
-  show: boolean
+  show: boolean,
 ): void {
   if (!element) return;
 
@@ -17,7 +17,7 @@ export function toggleElement(
 
 export function setElementWidth(
   element: HTMLElement | null,
-  percent: number
+  percent: number,
 ): void {
   if (!element) return;
   element.style.width = `${percent}%`;
@@ -25,7 +25,7 @@ export function setElementWidth(
 
 export function updateElementText(
   element: HTMLElement | null,
-  text: string
+  text: string,
 ): void {
   if (!element) return;
   element.textContent = text;

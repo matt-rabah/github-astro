@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { Slider } from '@/components/ui/slider';
-import { Label } from '@/components/ui/label';
-import { Input } from '@/components/ui/input';
+import React, { useState } from "react";
+import { Slider } from "@/components/ui/slider";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
 
 interface PriceRangeSelectorProps {
   min: number;
@@ -77,7 +77,7 @@ export const PriceRangeSelector: React.FC<PriceRangeSelectorProps> = ({
               id="min-price"
               type="number"
               value={localSelectedMin}
-              onChange={e => {
+              onChange={(e) => {
                 const value = Number(e.target.value) || roundedMin;
                 setLocalSelectedMin(value);
                 setSelectedMin(value);
@@ -98,7 +98,7 @@ export const PriceRangeSelector: React.FC<PriceRangeSelectorProps> = ({
               id="max-price"
               type="number"
               value={localSelectedMax}
-              onChange={e => {
+              onChange={(e) => {
                 const value = Number(e.target.value) || roundedMax;
                 setLocalSelectedMax(value);
                 setSelectedMax(value);

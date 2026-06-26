@@ -1,23 +1,23 @@
-import { useLoaderData } from 'react-router';
-import { useEffect, useState, type ReactNode } from 'react';
+import { useLoaderData } from "react-router";
+import { useEffect, useState, type ReactNode } from "react";
 
-import { loadCurrentCartServiceConfig } from '@wix/ecom/services';
-import { loadSEOTagsServiceConfig } from '@wix/seo/services';
-import { MiniCartContent, MiniCartIcon } from '@/components/ecom/MiniCart';
-import { CurrentCart } from '@/components/ui/ecom/CurrentCart';
-import { CartLineItemAdded } from '@/components/ui/ecom/Cart';
+import { loadCurrentCartServiceConfig } from "@wix/ecom/services";
+import { loadSEOTagsServiceConfig } from "@wix/seo/services";
+import { MiniCartContent, MiniCartIcon } from "@/components/ecom/MiniCart";
+import { CurrentCart } from "@/components/ui/ecom/CurrentCart";
+import { CartLineItemAdded } from "@/components/ui/ecom/Cart";
 import {
   NavigationProvider,
   type NavigationComponent,
-} from '@/components/NavigationContext';
-import { Link } from 'react-router';
-import '@wix/wix-vibe-plugins/plugins-vars.css';
+} from "@/components/NavigationContext";
+import { Link } from "react-router";
+import "@wix/wix-vibe-plugins/plugins-vars.css";
 import {
   MiniCartContextProvider,
   useMiniCartContext,
-} from '@/components/MiniCartContextProvider';
-import { Commerce } from '@/components/ui/ecom/Commerce';
-import { SEO } from '@wix/seo/components';
+} from "@/components/MiniCartContextProvider";
+import { Commerce } from "@/components/ui/ecom/Commerce";
+import { SEO } from "@wix/seo/components";
 
 const ReactRouterNavigationComponent: NavigationComponent = ({
   route,
@@ -45,7 +45,7 @@ export async function rootRouteLoader({ request }: { request: Request }) {
       seoTagsServiceConfig,
     };
   } catch (error) {
-    console.error('Error loading root route services:', error);
+    console.error("Error loading root route services:", error);
     // Return minimal valid configs as fallback
     return {
       currentCartServiceConfig: {},
@@ -58,7 +58,7 @@ export async function rootRouteLoader({ request }: { request: Request }) {
 
 export function WixServicesProvider(props: { children: React.ReactNode }) {
   const loaderData = useLoaderData<typeof rootRouteLoader>();
-  
+
   // Provide default values if loader data is not available
   const currentCartServiceConfig = loaderData?.currentCartServiceConfig || {};
   const seoTagsServiceConfig = loaderData?.seoTagsServiceConfig || { tags: [] };
@@ -134,7 +134,7 @@ function StoreLayoutContent({
                   open();
                 }, 3000);
               }),
-            [onAddedToCart]
+            [onAddedToCart],
           );
 
           return null;

@@ -52,7 +52,7 @@ export async function getServices(): Promise<WixService[]> {
 }
 
 export async function getServiceByType(
-  type: "free" | "premium"
+  type: "free" | "premium",
 ): Promise<WixService | undefined> {
   try {
     const services = await getServices();
@@ -68,7 +68,7 @@ export async function getServiceByType(
 
 export async function getAvailableSlots(
   date: Date,
-  serviceType: "free" | "premium"
+  serviceType: "free" | "premium",
 ): Promise<TimeSlot[]> {
   try {
     const service = await getServiceByType(serviceType);
@@ -88,13 +88,13 @@ export async function getAvailableSlots(
           endDate: tomorrow.toISOString(),
         },
       },
-      { timezone: "UTC" }
+      { timezone: "UTC" },
     );
 
     return availability.availabilityEntries.map((item) => ({
       time: item.slot?.startDate!,
       display: Intl.DateTimeFormat("en-US", TIME_FORMAT).format(
-        new Date(item.slot?.startDate!)
+        new Date(item.slot?.startDate!),
       ),
       available: item.bookable!,
       entity: item,
@@ -108,7 +108,7 @@ export async function getAvailableSlots(
 export async function createBooking(
   bookingData: BookingData,
   selectedSlot: TimeSlot,
-  selectedDate: Date
+  selectedDate: Date,
 ): Promise<WixBookingResponse> {
   try {
     const [firstName, ...lastNameParts] = bookingData.name.split(" ");
@@ -176,7 +176,7 @@ export async function createBooking(
 
 export async function createRedirectSession(
   slot: any,
-  returnUrl: string
+  returnUrl: string,
 ): Promise<string | undefined> {
   try {
     const redirect: WixRedirectResponse = await redirects.createRedirectSession(
@@ -188,7 +188,7 @@ export async function createRedirectSession(
         callbacks: {
           postFlowUrl: returnUrl,
         },
-      }
+      },
     );
 
     return redirect.redirectSession?.fullUrl;

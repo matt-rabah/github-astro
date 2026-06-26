@@ -11,16 +11,18 @@ export function wixBlogLoader(transform = (item: any) => item): Loader {
   return {
     name: "wix-blog-loader",
     load: async (context: LoaderContext) => {
-      const { items } = await posts.queryPosts({
-        fieldsets: [PostFieldField.RICH_CONTENT, PostFieldField.CONTENT_TEXT],
-      }).find();
+      const { items } = await posts
+        .queryPosts({
+          fieldsets: [PostFieldField.RICH_CONTENT, PostFieldField.CONTENT_TEXT],
+        })
+        .find();
 
       for (const item of items) {
         const categoriesResponse = await Promise.all(
           (item.categoryIds || []).map(async (categoryId) => {
             const { category } = await categories.getCategory(categoryId);
             return category;
-          })
+          }),
         );
         const { items: tagsResponse } = await tags.queryTags().find();
 

@@ -22,7 +22,7 @@ export const validateEnvironmentVariables = () => {
 
   if (missingEnvironmentVariables.length) {
     throw new Error(
-      `The following environment variables are missing. Your site will not work without them.`
+      `The following environment variables are missing. Your site will not work without them.`,
     );
   }
 };

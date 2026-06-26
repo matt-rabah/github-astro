@@ -1,9 +1,9 @@
-import ProductList from '@/components/store/ProductList';
+import ProductList from "@/components/store/ProductList";
 
 import {
   type CategoriesListServiceConfig,
   type ProductsListServiceConfig,
-} from '@wix/stores/services';
+} from "@wix/stores/services";
 
 interface StoreCollectionPageProps {
   productsListConfig: ProductsListServiceConfig;

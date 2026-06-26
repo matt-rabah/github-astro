@@ -79,7 +79,7 @@ const reshapeCart = (cart: currentCart.Cart): Cart => {
             return (
               acc + Number.parseFloat(item.price?.amount!) * item.quantity!
             );
-          }, 0)
+          }, 0),
         ),
         currencyCode: cart.currency!,
       },
@@ -89,7 +89,7 @@ const reshapeCart = (cart: currentCart.Cart): Cart => {
             return (
               acc + Number.parseFloat(item.price?.amount!) * item.quantity!
             );
-          }, 0)
+          }, 0),
         ),
         currencyCode: cart.currency!,
       },
@@ -109,7 +109,7 @@ const reshapeCart = (cart: currentCart.Cart): Cart => {
         cost: {
           totalAmount: {
             amount: String(
-              Number.parseFloat(item.price?.amount!) * item.quantity!
+              Number.parseFloat(item.price?.amount!) * item.quantity!,
             ),
             currencyCode: cart.currency!,
           },
@@ -159,8 +159,7 @@ const reshapeProduct = (item: productsV3.V3Product) => {
     title: item.name!,
     description: item.plainDescription ?? item.name ?? "",
     descriptionHtml: item.plainDescription ?? item.name ?? "",
-    availableForSale:
-      item.inventory?.availabilityStatus !== "OUT_OF_STOCK",
+    availableForSale: item.inventory?.availabilityStatus !== "OUT_OF_STOCK",
     handle: item.slug!,
     images:
       item.media?.itemsInfo?.items
@@ -191,7 +190,7 @@ const reshapeProduct = (item: productsV3.V3Product) => {
       id: option.name!,
       name: option.name!,
       values: (option.choicesSettings?.choices ?? []).map(
-        (choice) => choice.name!
+        (choice) => choice.name!,
       ),
     })),
     featuredImage: item.media?.main?.image
@@ -227,8 +226,8 @@ const reshapeProduct = (item: productsV3.V3Product) => {
               x.choicesSettings?.choices?.map((choice) => ({
                 name: x.name,
                 value: choice.name,
-              })) ?? []
-          ) ?? []
+              })) ?? [],
+          ) ?? [],
         ).map((selectedOptions) => ({
           id: "00000000-0000-0000-0000-000000000000",
           title: item.name!,
@@ -253,7 +252,7 @@ export async function addToCart(
     productId: string;
     variant?: { variantId: string } | { options: Record<string, string> };
     quantity: number;
-  }[]
+  }[],
 ): Promise<Cart> {
   const { cart } = await currentCart.addToCurrentCart({
     lineItems: lines.map(({ productId, variant, quantity }) => ({
@@ -278,13 +277,13 @@ export async function removeFromCart(lineIds: string[]): Promise<Cart> {
 }
 
 export async function updateCart(
-  lines: { id: string; merchandiseId: string; quantity: number }[]
+  lines: { id: string; merchandiseId: string; quantity: number }[],
 ): Promise<Cart> {
   const { cart } = await currentCart.updateCurrentCartLineItemQuantity(
     lines.map(({ id, quantity }) => ({
       id: id,
       quantity,
-    }))
+    })),
   );
 
   return reshapeCart(cart!);
@@ -308,7 +307,7 @@ const CATEGORIES_TREE_REFERENCE = {
 };
 
 export async function getCollection(
-  handle: string
+  handle: string,
 ): Promise<Collection | undefined> {
   try {
     const { categories: results = [] } = await categories.searchCategories(
@@ -316,7 +315,7 @@ export async function getCollection(
         filter: { slug: handle },
         cursorPaging: { limit: 1 },
       },
-      { treeReference: CATEGORIES_TREE_REFERENCE }
+      { treeReference: CATEGORIES_TREE_REFERENCE },
     );
 
     const category = results[0];
@@ -349,7 +348,7 @@ export async function getCollectionProducts({
         filter: { slug: collection },
         cursorPaging: { limit: 1 },
       },
-      { treeReference: CATEGORIES_TREE_REFERENCE }
+      { treeReference: CATEGORIES_TREE_REFERENCE },
     );
     resolvedCategory = results[0];
   } catch (e) {
@@ -369,7 +368,9 @@ export async function getCollectionProducts({
     let query = productsV3
       .queryProducts({ fields: PRODUCT_FIELDS_DETAIL })
       .limit(100);
-    query = reverse ? query.descending(fieldName as any) : query.ascending(fieldName as any);
+    query = reverse
+      ? query.descending(fieldName as any)
+      : query.ascending(fieldName as any);
     const result = await query.find();
     products = result.items;
   } else {
@@ -383,7 +384,7 @@ export async function getCollectionProducts({
         sort: buildSearchSort(sortKey, reverse),
         cursorPaging: { limit: 100 },
       },
-      { fields: PRODUCT_FIELDS_DETAIL }
+      { fields: PRODUCT_FIELDS_DETAIL },
     ));
   }
 
@@ -393,7 +394,7 @@ export async function getCollectionProducts({
 export async function getCollections(): Promise<Collection[]> {
   const { categories: items = [] } = await categories.searchCategories(
     { cursorPaging: { limit: 100 } },
-    { treeReference: CATEGORIES_TREE_REFERENCE }
+    { treeReference: CATEGORIES_TREE_REFERENCE },
   );
 
   const wixCollections = [
@@ -411,7 +412,7 @@ export async function getCollections(): Promise<Collection[]> {
     // Filter out the `hidden` collections.
     // Collections that start with `hidden-*` need to be hidden on the search page.
     ...reshapeCategories(items).filter(
-      (collection) => !collection.handle.startsWith("hidden")
+      (collection) => !collection.handle.startsWith("hidden"),
     ),
   ];
 
@@ -431,7 +432,7 @@ export async function getProduct(handle: string): Promise<Product | undefined> {
 }
 
 export async function getProductRecommendations(
-  productId: string
+  productId: string,
 ): Promise<Product[]> {
   const { recommendation } = await recommendations.getRecommendation(
     [
@@ -456,7 +457,7 @@ export async function getProductRecommendations(
         },
       ],
       minimumRecommendedItems: 3,
-    }
+    },
   );
 
   if (!recommendation) {
@@ -472,7 +473,7 @@ export async function getProductRecommendations(
       } as any,
       cursorPaging: { limit: 6 },
     },
-    { fields: PRODUCT_FIELDS_LIST }
+    { fields: PRODUCT_FIELDS_LIST },
   );
   return products.slice(0, 6).map(reshapeProduct);
 }
@@ -492,7 +493,9 @@ export async function getProducts({
     let q = productsV3
       .queryProducts({ fields: PRODUCT_FIELDS_DETAIL })
       .limit(100);
-    q = reverse ? q.descending(fieldName as any) : q.ascending(fieldName as any);
+    q = reverse
+      ? q.descending(fieldName as any)
+      : q.ascending(fieldName as any);
     const result = await q.find();
     products = result.items;
   } else {
@@ -502,7 +505,7 @@ export async function getProducts({
         sort: buildSearchSort(sortKey, reverse),
         cursorPaging: { limit: 100 },
       },
-      { fields: PRODUCT_FIELDS_DETAIL }
+      { fields: PRODUCT_FIELDS_DETAIL },
     ));
   }
 

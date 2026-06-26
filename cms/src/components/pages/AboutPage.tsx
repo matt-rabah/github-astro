@@ -1,37 +1,41 @@
-import { Image } from '@/components/ui/image';
-import { Target, Users, Award, TrendingUp } from 'lucide-react';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import { Image } from "@/components/ui/image";
+import { Target, Users, Award, TrendingUp } from "lucide-react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export default function AboutPage() {
   const values = [
     {
       icon: Target,
-      title: 'Our Mission',
-      description: 'To deliver exceptional solutions that exceed expectations and drive meaningful results for our clients and partners.',
+      title: "Our Mission",
+      description:
+        "To deliver exceptional solutions that exceed expectations and drive meaningful results for our clients and partners.",
     },
     {
       icon: Users,
-      title: 'Our Team',
-      description: 'A diverse group of talented professionals united by passion, expertise, and commitment to excellence.',
+      title: "Our Team",
+      description:
+        "A diverse group of talented professionals united by passion, expertise, and commitment to excellence.",
     },
     {
       icon: Award,
-      title: 'Our Quality',
-      description: 'We maintain the highest standards in everything we do, ensuring consistent quality and reliability.',
+      title: "Our Quality",
+      description:
+        "We maintain the highest standards in everything we do, ensuring consistent quality and reliability.",
     },
     {
       icon: TrendingUp,
-      title: 'Our Growth',
-      description: 'Continuously evolving and adapting to meet the changing needs of our industry and clients.',
+      title: "Our Growth",
+      description:
+        "Continuously evolving and adapting to meet the changing needs of our industry and clients.",
     },
   ];
 
   const stats = [
-    { value: '500+', label: 'Projects Completed' },
-    { value: '15+', label: 'Years Experience' },
-    { value: '200+', label: 'Happy Clients' },
-    { value: '50+', label: 'Team Members' },
+    { value: "500+", label: "Projects Completed" },
+    { value: "15+", label: "Years Experience" },
+    { value: "200+", label: "Happy Clients" },
+    { value: "50+", label: "Team Members" },
   ];
 
   return (
@@ -48,7 +52,8 @@ export default function AboutPage() {
             Building excellence through innovation and dedication
           </h1>
           <p className="font-paragraph text-lg md:text-xl max-w-3xl leading-relaxed opacity-95">
-            We are a team of passionate professionals committed to delivering outstanding results and creating lasting value for our clients.
+            We are a team of passionate professionals committed to delivering
+            outstanding results and creating lasting value for our clients.
           </p>
         </div>
       </section>
@@ -65,13 +70,22 @@ export default function AboutPage() {
                 A journey of passion and purpose
               </h2>
               <p className="font-paragraph text-lg text-foreground opacity-80 leading-relaxed mb-6">
-                Founded with a vision to transform the industry, we've grown from a small startup to a recognized leader in our field. Our journey has been marked by continuous innovation, unwavering commitment to quality, and a deep understanding of our clients' needs.
+                Founded with a vision to transform the industry, we've grown
+                from a small startup to a recognized leader in our field. Our
+                journey has been marked by continuous innovation, unwavering
+                commitment to quality, and a deep understanding of our clients'
+                needs.
               </p>
               <p className="font-paragraph text-lg text-foreground opacity-80 leading-relaxed mb-6">
-                Every project we undertake is an opportunity to push boundaries, challenge conventions, and deliver solutions that make a real difference. We believe in the power of collaboration, the importance of integrity, and the value of sustainable practices.
+                Every project we undertake is an opportunity to push boundaries,
+                challenge conventions, and deliver solutions that make a real
+                difference. We believe in the power of collaboration, the
+                importance of integrity, and the value of sustainable practices.
               </p>
               <p className="font-paragraph text-lg text-foreground opacity-80 leading-relaxed">
-                Today, we continue to evolve, embracing new technologies and methodologies while staying true to the core values that have defined us from the beginning.
+                Today, we continue to evolve, embracing new technologies and
+                methodologies while staying true to the core values that have
+                defined us from the beginning.
               </p>
             </div>
             <div className="relative h-[500px] lg:h-[600px]">
@@ -158,13 +172,21 @@ export default function AboutPage() {
                 How we work with you
               </h2>
               <p className="font-paragraph text-lg leading-relaxed mb-6 opacity-95">
-                We believe in a collaborative approach that puts our clients at the center of everything we do. From initial consultation to final delivery, we work closely with you to understand your goals, challenges, and vision.
+                We believe in a collaborative approach that puts our clients at
+                the center of everything we do. From initial consultation to
+                final delivery, we work closely with you to understand your
+                goals, challenges, and vision.
               </p>
               <p className="font-paragraph text-lg leading-relaxed mb-6 opacity-95">
-                Our process is transparent, efficient, and designed to deliver results that exceed expectations. We combine strategic thinking with creative execution, ensuring that every solution is both innovative and practical.
+                Our process is transparent, efficient, and designed to deliver
+                results that exceed expectations. We combine strategic thinking
+                with creative execution, ensuring that every solution is both
+                innovative and practical.
               </p>
               <p className="font-paragraph text-lg leading-relaxed opacity-95">
-                Whether you're looking to launch a new initiative or optimize existing operations, we bring the expertise, dedication, and passion needed to help you succeed.
+                Whether you're looking to launch a new initiative or optimize
+                existing operations, we bring the expertise, dedication, and
+                passion needed to help you succeed.
               </p>
             </div>
           </div>

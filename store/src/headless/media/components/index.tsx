@@ -1,1 +1,1 @@
-export { WixMediaImage } from '@wix/media/components';
+export { WixMediaImage } from "@wix/media/components";

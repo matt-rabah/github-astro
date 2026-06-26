@@ -1,16 +1,16 @@
-import { useLoaderData, redirect, Await, useParams } from 'react-router';
-import React, { useEffect } from 'react';
+import { useLoaderData, redirect, Await, useParams } from "react-router";
+import React, { useEffect } from "react";
 import {
   loadCategoriesListServiceConfig,
   parseUrlToSearchOptions,
-} from '@wix/stores/services';
-import { loadProductsListServiceConfig } from '@wix/stores/services';
-import CategoryPage from '../../store/main-components/categoryPage';
-import { ProductListSkeleton } from '@/components/store/ProductList';
-import { Card, CardContent } from '@/components/ui/card';
-import { customizationsV3 } from '@wix/stores';
-import { SEO } from '@wix/seo/components';
-import { seoTags } from '@wix/seo';
+} from "@wix/stores/services";
+import { loadProductsListServiceConfig } from "@wix/stores/services";
+import CategoryPage from "../../store/main-components/categoryPage";
+import { ProductListSkeleton } from "@/components/store/ProductList";
+import { Card, CardContent } from "@/components/ui/card";
+import { customizationsV3 } from "@wix/stores";
+import { SEO } from "@wix/seo/components";
+import { seoTags } from "@wix/seo";
 
 // Helper function to create SEO configuration for store categories
 function createCategorySeoConfig(categoryName: string, categorySlug?: string) {
@@ -20,14 +20,14 @@ function createCategorySeoConfig(categoryName: string, categorySlug?: string) {
     seoData: {
       tags: [
         {
-          type: 'title' as const,
+          type: "title" as const,
           children: `${categoryName} - Store`,
         },
         {
-          type: 'meta' as const,
+          type: "meta" as const,
           props: {
             content: `Browse our ${categoryName} products`,
-            name: 'description',
+            name: "description",
           },
         },
       ],
@@ -143,7 +143,7 @@ export async function storeCollectionRouteLoader({
   let selectedCategory = null;
   if (params.categorySlug) {
     selectedCategory = categoriesListConfig.categories.find(
-      (cat: any) => cat.slug === params.categorySlug
+      (cat: any) => cat.slug === params.categorySlug,
     );
   } else {
     selectedCategory = categoriesListConfig.categories[0];
@@ -152,7 +152,7 @@ export async function storeCollectionRouteLoader({
 
   // If category not found, return 404
   if (!selectedCategory) {
-    throw new Response('Not Found', { status: 404 });
+    throw new Response("Not Found", { status: 404 });
   }
 
   const { items: customizations = [] } = await customizationsV3
@@ -168,11 +168,11 @@ export async function storeCollectionRouteLoader({
         limit: 20,
       },
       filter: {
-        'allCategoriesInfo.categories': {
+        "allCategoriesInfo.categories": {
           $matchItems: [{ _id: selectedCategory._id! }],
         },
       },
-    }
+    },
   );
   const productListConfigPromise =
     loadProductsListServiceConfig(parsedSearchOptions);
@@ -202,9 +202,9 @@ export function StoreCollectionRoute({
   const { categorySlug } = useParams();
 
   const category = categoriesListConfig.categories.find(
-    category => category.slug === currentCategorySlug
+    (category) => category.slug === currentCategorySlug,
   );
-  const categoryName = category?.name || '';
+  const categoryName = category?.name || "";
 
   return (
     <SEO.UpdateTagsTrigger>
@@ -212,10 +212,10 @@ export function StoreCollectionRoute({
         // Update SEO tags on client-side navigation (SPA transitions)
         // This is for client-side navigation only; SSR handles initial load
         useEffect(() => {
-          if (categorySlug && typeof window !== 'undefined') {
+          if (categorySlug && typeof window !== "undefined") {
             updateSeoTags(
               seoTags.ItemType.STORES_CATEGORY,
-              createCategorySeoConfig(categoryName, categorySlug)
+              createCategorySeoConfig(categoryName, categorySlug),
             );
           }
         }, [categorySlug, updateSeoTags, categoryName]);
@@ -228,7 +228,7 @@ export function StoreCollectionRoute({
                 resolve={productListConfig ?? productListConfigPromise}
                 errorElement={<CollectionError />}
               >
-                {resolvedProductListConfig => {
+                {(resolvedProductListConfig) => {
                   return (
                     <CategoryPage
                       categoriesListConfig={categoriesListConfig}

@@ -1,9 +1,9 @@
-import React from 'react';
-import { cn } from '@/lib/utils';
-import { ProductList as ProductListPrimitive } from '@wix/stores/components';
-import { Button } from '@/components/ui/button';
-import type { BaseItem, LayoutType } from '@wix/fast-gallery-vibe';
-import { GalleryWrapper } from '@wix/fast-gallery-vibe';
+import React from "react";
+import { cn } from "@/lib/utils";
+import { ProductList as ProductListPrimitive } from "@wix/stores/components";
+import { Button } from "@/components/ui/button";
+import type { BaseItem, LayoutType } from "@wix/fast-gallery-vibe";
+import { GalleryWrapper } from "@wix/fast-gallery-vibe";
 
 /**
  * Root component for product list functionality.
@@ -83,7 +83,7 @@ export const Products = React.forwardRef<
     </div>
   );
 });
-Products.displayName = 'Products';
+Products.displayName = "Products";
 
 /**
  * Repeater component that renders each product in the list.
@@ -127,7 +127,7 @@ export const ProductRepeater = React.forwardRef<
     </ProductListPrimitive.ProductRepeater>
   );
 });
-ProductRepeater.displayName = 'ProductRepeater';
+ProductRepeater.displayName = "ProductRepeater";
 
 /**
  * Load more trigger component that displays a button to load additional products.
@@ -154,14 +154,14 @@ export const ProductLoadMoreTrigger = React.forwardRef<
   (
     {
       className,
-      label = 'Load More Products',
-      loadingState = 'Loading...',
+      label = "Load More Products",
+      loadingState = "Loading...",
       ...props
     },
-    ref
+    ref,
   ) => (
     <ProductListPrimitive.LoadMoreTrigger
-      className={cn('font-semibold transform hover:scale-105', className)}
+      className={cn("font-semibold transform hover:scale-105", className)}
       {...props}
       asChild
     >
@@ -173,18 +173,18 @@ export const ProductLoadMoreTrigger = React.forwardRef<
           onClick={() => loadMore()}
           className={`font-semibold transform hover:scale-105 ${
             isLoading
-              ? 'bg-surface-loading animate-pulse'
-              : 'shadow-md hover:shadow-lg'
+              ? "bg-surface-loading animate-pulse"
+              : "shadow-md hover:shadow-lg"
           }`}
         >
           {!isLoading ? label : loadingState}
         </Button>
       )}
     </ProductListPrimitive.LoadMoreTrigger>
-  )
+  ),
 );
 
-ProductLoadMoreTrigger.displayName = 'ProductLoadMoreTrigger';
+ProductLoadMoreTrigger.displayName = "ProductLoadMoreTrigger";
 
 /**
  * Displays the total number of products currently shown in the product list.
@@ -219,7 +219,7 @@ export const ProductTotalsDisplayed = React.forwardRef<
      */
     label?: string;
   }
->(({ className, label = '{length} products loaded', ...props }, ref) => (
+>(({ className, label = "{length} products loaded", ...props }, ref) => (
   <ProductListPrimitive.TotalsDisplayed
     ref={ref}
     {...props}
@@ -227,9 +227,9 @@ export const ProductTotalsDisplayed = React.forwardRef<
     asChild
   >
     {({ displayedItems }) => (
-      <span>{label.replace('{length}', displayedItems.toString())}</span>
+      <span>{label.replace("{length}", displayedItems.toString())}</span>
     )}
   </ProductListPrimitive.TotalsDisplayed>
 ));
 
-ProductTotalsDisplayed.displayName = 'ProductTotalsDisplayed';
+ProductTotalsDisplayed.displayName = "ProductTotalsDisplayed";

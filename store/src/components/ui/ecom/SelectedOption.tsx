@@ -1,7 +1,7 @@
-import React from 'react';
-import { cva, type VariantProps } from 'class-variance-authority';
-import { cn } from '@/lib/utils';
-import { SelectedOption as SelectedOptionPrimitive } from '@wix/ecom/components';
+import React from "react";
+import { cva, type VariantProps } from "class-variance-authority";
+import { cn } from "@/lib/utils";
+import { SelectedOption as SelectedOptionPrimitive } from "@wix/ecom/components";
 
 /**
  * Root component for displaying a selected product option in cart line items.
@@ -25,23 +25,24 @@ import { SelectedOption as SelectedOptionPrimitive } from '@wix/ecom/components'
 export const SelectedOption = SelectedOptionPrimitive.Root;
 
 // SelectedOption Text Component
-const selectedOptionTextVariants = cva('text-content-secondary', {
+const selectedOptionTextVariants = cva("text-content-secondary", {
   variants: {
     size: {
-      default: 'text-sm',
-      xs: 'text-xs',
-      sm: 'text-sm',
-      base: 'text-base',
-      lg: 'text-lg',
+      default: "text-sm",
+      xs: "text-xs",
+      sm: "text-sm",
+      base: "text-base",
+      lg: "text-lg",
     },
   },
   defaultVariants: {
-    size: 'default',
+    size: "default",
   },
 });
 
 export interface SelectedOptionTextProps
-  extends React.ComponentPropsWithoutRef<typeof SelectedOptionPrimitive.Text>,
+  extends
+    React.ComponentPropsWithoutRef<typeof SelectedOptionPrimitive.Text>,
     VariantProps<typeof selectedOptionTextVariants> {}
 
 /**
@@ -78,29 +79,30 @@ export const SelectedOptionText = React.forwardRef<
   );
 });
 
-SelectedOptionText.displayName = 'SelectedOptionText';
+SelectedOptionText.displayName = "SelectedOptionText";
 
 // SelectedOption Color Component
 const selectedOptionColorVariants = cva(
-  'flex items-center text-content-secondary',
+  "flex items-center text-content-secondary",
   {
     variants: {
       size: {
-        default: 'gap-2 text-sm',
-        xs: 'gap-1 text-xs',
-        sm: 'gap-2 text-sm',
-        base: 'gap-2 text-base',
-        lg: 'gap-3 text-lg',
+        default: "gap-2 text-sm",
+        xs: "gap-1 text-xs",
+        sm: "gap-2 text-sm",
+        base: "gap-2 text-base",
+        lg: "gap-3 text-lg",
       },
     },
     defaultVariants: {
-      size: 'default',
+      size: "default",
     },
-  }
+  },
 );
 
 export interface SelectedOptionColorProps
-  extends React.ComponentPropsWithoutRef<typeof SelectedOptionPrimitive.Color>,
+  extends
+    React.ComponentPropsWithoutRef<typeof SelectedOptionPrimitive.Color>,
     VariantProps<typeof selectedOptionColorVariants> {}
 
 /**
@@ -141,4 +143,4 @@ export const SelectedOptionColor = React.forwardRef<
   );
 });
 
-SelectedOptionColor.displayName = 'SelectedOptionColor';
+SelectedOptionColor.displayName = "SelectedOptionColor";

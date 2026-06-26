@@ -21,14 +21,8 @@
           "understated"
         ],
         "designStyle": {
-          "primaryStyle": [
-            "Minimalism",
-            "Modern"
-          ],
-          "supportingStyles": [
-            "Editorial",
-            "Luxury"
-          ]
+          "primaryStyle": ["Minimalism", "Modern"],
+          "supportingStyles": ["Editorial", "Luxury"]
         },
         "palette": {
           "colors": {
@@ -243,15 +237,8 @@
           "approachable"
         ],
         "designStyle": {
-          "primaryStyle": [
-            "Minimalism",
-            "Modern"
-          ],
-          "supportingStyles": [
-            "Professional",
-            "Architectural",
-            "Natural"
-          ]
+          "primaryStyle": ["Minimalism", "Modern"],
+          "supportingStyles": ["Professional", "Architectural", "Natural"]
         },
         "palette": {
           "colors": {
@@ -285,11 +272,7 @@
               "fontFamily": "space grotesk",
               "fontJustification": ""
             },
-            "headingsSimilarFonts": [
-              "work-sans-v2",
-              "rubik-v2",
-              "open sans"
-            ],
+            "headingsSimilarFonts": ["work-sans-v2", "rubik-v2", "open sans"],
             "headingsUsageGuide": "Use the heading font for all major titles and section headers to establish a clear visual hierarchy. Pair with the paragraph font for body text to maintain readability and balance. Headings should have ample spacing above and below to separate content blocks and improve scanability. Use 'primaryForeground' color on 'primary' backgrounds or black on lighter backgrounds for optimal contrast.",
             "headingsAccessibilityNotes": "Headings using the 'primary' color background with 'primaryForeground' text meet WCAG AA contrast standards. On lighter backgrounds, black text ensures excellent readability and accessibility."
           },
@@ -299,11 +282,7 @@
               "fontFamily": "work-sans-v2",
               "fontJustification": ""
             },
-            "paragraphsSimilarFonts": [
-              "open sans",
-              "poppins-v2",
-              "rubik-v2"
-            ],
+            "paragraphsSimilarFonts": ["open sans", "poppins-v2", "rubik-v2"],
             "paragraphsUsageGuide": "Use the paragraph font for all body text, descriptions, and smaller informational content. Maintain sufficient line height and letter spacing to enhance readability. Combine with heading fonts to create a balanced typographic system. Text color should be 'secondaryForeground' on 'secondary' backgrounds or black on white backgrounds to ensure clarity.",
             "paragraphsAccessibilityNotes": "Body text colors meet WCAG AA contrast ratios against their respective backgrounds, ensuring accessibility for all users."
           },
@@ -463,15 +442,8 @@
           "user-friendly"
         ],
         "designStyle": {
-          "primaryStyle": [
-            "Minimalism",
-            "Modern"
-          ],
-          "supportingStyles": [
-            "Functional",
-            "Grid-Based",
-            "Neutral"
-          ]
+          "primaryStyle": ["Minimalism", "Modern"],
+          "supportingStyles": ["Functional", "Grid-Based", "Neutral"]
         },
         "palette": {
           "colors": {
@@ -509,11 +481,7 @@
               "fontFamily": "open sans",
               "fontJustification": ""
             },
-            "headingsSimilarFonts": [
-              "work-sans-v2",
-              "raleway",
-              "poppins-v2"
-            ],
+            "headingsSimilarFonts": ["work-sans-v2", "raleway", "poppins-v2"],
             "headingsUsageGuide": "Use the heading font for all major titles and section headers to establish clear content hierarchy. Pair with the paragraph font for body text to maintain readability and visual balance. Maintain generous spacing above and below headings to enhance clarity. Headings should be in 'primaryForeground' color on dark backgrounds and 'secondaryForeground' on light backgrounds for optimal contrast.",
             "headingsAccessibilityNotes": "Headings using the 'primaryForeground' color on 'primary' background and 'secondaryForeground' on 'secondary' background meet WCAG AA contrast requirements, ensuring accessibility."
           },
@@ -523,11 +491,7 @@
               "fontFamily": "open sans",
               "fontJustification": ""
             },
-            "paragraphsSimilarFonts": [
-              "work-sans-v2",
-              "raleway",
-              "poppins-v2"
-            ],
+            "paragraphsSimilarFonts": ["work-sans-v2", "raleway", "poppins-v2"],
             "paragraphsUsageGuide": "Use the paragraph font for all body text and descriptive content. Maintain consistent line height and letter spacing for readability. Text should appear in 'secondaryForeground' on 'secondary' backgrounds and 'primaryForeground' on 'primary' backgrounds. Avoid using both the 'highlight' and 'secondary' color for body text to preserve legibility.",
             "paragraphsAccessibilityNotes": "Paragraph text colors on their respective backgrounds meet WCAG AA contrast standards, supporting accessibility."
           },
@@ -682,10 +646,7 @@
           "modular"
         ],
         "designStyle": {
-          "primaryStyle": [
-            "Editorial",
-            "Modern Minimalism"
-          ],
+          "primaryStyle": ["Editorial", "Modern Minimalism"],
           "supportingStyles": [
             "Modular Grid",
             "Asymmetrical Layout",
@@ -750,11 +711,7 @@
               "fontFamily": "avenir-lt-w01_35-light1475496",
               "fontJustification": ""
             },
-            "paragraphsSimilarFonts": [
-              "open sans",
-              "rubik-v2",
-              "work-sans-v2"
-            ],
+            "paragraphsSimilarFonts": ["open sans", "rubik-v2", "work-sans-v2"],
             "paragraphsUsageGuide": "Use the paragraph font in sentence case with moderate line height and letter spacing for comfortable reading. Pair with bold headings to create clear typographic contrast. Text color should primarily be 'secondary' or 'secondaryForeground' on 'background' to ensure legibility. Avoid using paragraph fonts in all caps to maintain readability.",
             "paragraphsAccessibilityNotes": "Paragraph text using 'secondary' on 'background' or 'secondaryForeground' on 'secondary' meets WCAG AA contrast ratios for body text."
           },
@@ -906,14 +863,8 @@
       "understated"
     ],
     "designStyle": {
-      "primaryStyle": [
-        "Minimalism",
-        "Modern"
-      ],
-      "supportingStyles": [
-        "Editorial",
-        "Luxury"
-      ]
+      "primaryStyle": ["Minimalism", "Modern"],
+      "supportingStyles": ["Editorial", "Luxury"]
     },
     "toneOfVoice": "Sophisticated, minimalistic, elegant, and modern with a calm and refined personality.",
     "components": {
@@ -929,11 +880,7 @@
           "fontJustification": ""
         },
         "headingsUsageGuide": "Use the heading font in large sizes with tight letter spacing to create strong visual impact and hierarchy. Headings should be uppercase or all caps for a clean, modern look. Pair headings with the serif paragraph font to create contrast and balance. Maintain generous spacing around headings to preserve the minimal aesthetic. Use the 'primary' color for headings to ensure maximum readability and emphasis.",
-        "headingsSimilarFonts": [
-          "futura-lt-w01-book",
-          "montserrat",
-          "oswald"
-        ],
+        "headingsSimilarFonts": ["futura-lt-w01-book", "montserrat", "oswald"],
         "headingsAccessibilityNotes": "Headings in 'primary' color on 'background' provide excellent contrast and meet WCAG AA standards for all sizes, ensuring clear readability and accessibility."
       },
       "fontSizes": [
